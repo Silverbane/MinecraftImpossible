@@ -1,0 +1,32 @@
+allWorlds:
+  default:
+    MIN: -1
+    MAX: -1
+    POTION: 20
+    SNOW_BALL: 64
+    WATER_BUCKET: 16
+    LAVA_BUCKET: 16
+    MILK_BUCKET: 16
+    EGG: 64
+  player: {}
+  group:
+    testGroup:
+      MIN: -1
+      MAX: -1
+  inventory:
+    chest:
+      MIN: -1
+      MAX: -1
+  testPlayer:
+    MIN: -1
+    MAX: -1
+  testGroup:
+    MIN: -1
+    MAX: -1
+  chest:
+    MIN: -1
+    MAX: -1
+testWorld:
+  default:
+    MIN: -1
+    MAX: -1

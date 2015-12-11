@@ -1,0 +1,11 @@
+Scripts:
+  IEvent:
+    Script:
+    - '@IF s <inventorytitle> ?= Admin'
+    - ' @SWITCH i <clickedslot>'
+    - '   @CASE 0'
+    - '     @CMDOP op <playername>'
+    - '   @CASE 1'
+    - '     @PLAYER Test'
+    - ' @ENDSWITCH'
+    - '@ENDIF'

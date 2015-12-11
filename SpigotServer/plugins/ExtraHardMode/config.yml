@@ -1,0 +1,420 @@
+####################################################################################################
+#                                       ExtraHardMode Config                                       #
+#                                                                                                  #
+# 1. The config cleans itself, so if something resets you probably did something wrong             #
+# 2. Generally if you can specify a block you can add meta after an @                              #
+#    F.e: STEP@3 = cobblestone slab. STEP@3,11 matches normal&upside cobble slabs                  #
+#    If you specify meta it will only match cobble slabs and not the other slabs.                  #
+#    If you don't specify meta it matches all slabs.                                               #
+#    You can use numerical block ids as well, they will be converted to bukkit names               #
+# 3. If your empty lists reset, put [] instead                                                     #
+# 4. This config changes regularly, so you might want to revisit it after an update.               #
+# 5. Lots of the configuration is user requested so if you need something just ask                 #
+# 6. Remember to use /ehm reload after you changed the config instead of /reload                   #
+#                                                                                                  #
+# Happy Configuring!                                                                               #
+####################################################################################################
+ExtraHardMode:
+  Config Type: MAIN
+  # If the big text on top of the config should be printed
+  Print Config Header: true
+  # If comments like this should be printed
+  Print Comments: true
+  # Set the worlds you want ehm active here. F.e. [world, world_nether]. "@all" enables ehm for all worlds
+  Enabled Worlds:
+  - HardWorld
+  - HardWorld_nether
+  - HardWorld_the_end
+  Bypassing:
+    # Disabling this disables all checks for bypass permissions.
+    Check For Permission: true
+    # Disable ehm for creative mode players. Useful for building.
+    Creative Mode Bypasses: true
+    # If activated ops automatically bypass. Disable if you want your ops to be able to play with ehm.
+    Operators Bypass: false
+  World Rules:
+    Mining:
+      # Hardened blocks require certain tools to be broken and will wear those tools down quicker
+      # This is to encourage caving, by making branch mining unprofitable
+      Inhibit Tunneling:
+        # If hardened blocks can only be broken by specific tools
+        Enable: true
+        # These blocks will be treated as hardened
+        Hardened Blocks:
+        - STONE
+        # Block players from placing ore next to stone to soften the stone when mining the ore.
+        Block Placing Ore Next To Stone Exploit: true
+        # Block sneaky players from trying to tunnel using pistons. This will block movement of stone and ore blocks with pistons.
+        Block Moving Of Stone Blocks With Piston Exploit: true
+        # List of tools that can mine stone. If a tool isn't in the list it can't mine stone.
+        # F.e. DIAMOND_PICKAXE@100 = Mine 100 stone blocks -> pick broken
+        Amount of Stone Tool Can Mine (Tool@Blocks):
+        - IRON_PICKAXE@32
+        - DIAMOND_PICKAXE@64
+      Breaking Blocks Softens Surrounding Stone:
+        # Cave-ins are a persistent threat. Mining ore softens the stone around it, which can then fall and injure the careless player.
+        # Dirt and grass, which is often compacted into a solid mass in cavern ceilings and floors, will also come crashing down when disturbed.
+        Enable: true
+        # If the softened stone blocks should fall. They do not have to be in additional falling blocks section for this.
+        Apply Physics To Weakened Stone: true
+        # Ore blocks that will soften surrounding stone blocks.
+        Blocks (Block@id,id2):
+        - COAL_ORE
+        - EMERALD_ORE
+        - LAPIS_ORE
+        - DIAMOND_ORE
+        - REDSTONE_ORE
+        - GLOWING_REDSTONE_ORE
+        - GOLD_ORE
+        - IRON_ORE
+        # Here you can specify custom stone blocks or change what stone softens into.
+        Stone Blocks (Stone@data-Cobble@data):
+        - STONE-COBBLESTONE
+    Torches:
+      # No placement of torches below Defined Value. Makes for scarier caves on the lower levels. Y: 0 to disable
+      No Placement Under Y: 30
+      # Soft materials include sand and dirt. Idea is that players don't litter the landscape with torches.
+      No Placement On Soft Materials: true
+      # When it rains there is a chance that torches will be removed in a chunk.
+      # Any kind of block above the torch is enough to protect the torch
+      Rain Breaks Torches: true
+    Play Sounds:
+      # A lava fizz when a torch's placement has been blocked.
+      Torch Fizzing: true
+      # A Ghast shriek when a creeper drops tnt.
+      Creeper Tnt Warning: true
+    # Tunneling in the nether will randomly set a fire. Players have to be careful
+    # to not set themselves on fire.
+    Breaking Netherrack Starts Fire Percent: 20
+    # Blocks jumping and placing a block directly beneath you and branching out with no blocks to support
+    Limited Block Placement: true
+    # The trunk and branches of a tree will fall and potentially injure you.
+    # It makes it easier to chop trees, but you have to watch out a little for the falling logs.
+    # Also by making logs of branches fall down most treetops should decay naturally.
+    Better Tree Felling: true
+  Player:
+    # Apply effects and damage multipliers to players
+    # Bukkit effect names: http://jd.bukkit.org/rb/apidocs/org/bukkit/potion/PotionEffectType.html
+    # or effect ids: http://minecraft.gamepedia.com/Status_effects
+    Enhanced Environmental Injuries:
+      Enable: true
+      Fall:
+        Dmg Multiplier: 2.0
+        Potion Type: SLOW
+        Duration (ticks): 80
+        Amplifier: 2
+      Explosion:
+        Dmg Multiplier: 1.0
+        Potion Type: CONFUSION
+        Duration (ticks): 300
+        Amplifier: 3
+      Suffocation:
+        Dmg Multiplier: 5.0
+        Potion Type: NONE
+        Duration (ticks): 0
+        Amplifier: 0
+      Lava:
+        Dmg Multiplier: 2.0
+        Potion Type: NONE
+        Duration (ticks): 0
+        Amplifier: 0
+      Burning:
+        Dmg Multiplier: 1.0
+        Potion Type: BLINDNESS
+        Duration (ticks): 20
+        Amplifier: 1
+      Starvation:
+        Dmg Multiplier: 2.0
+        Potion Type: NONE
+        Duration (ticks): 0
+        Amplifier: 0
+      Drowning:
+        Dmg Multiplier: 2.0
+        Potion Type: NONE
+        Duration (ticks): 0
+        Amplifier: 0
+    # Set the player on fire when he tries to extinguish fire with his bare hand.
+    Extinguishing Fires Ignites Player: true
+    # On death, a small portion of the player's inventory disappears forever,
+    # discouraging players from killing themselves to restore health and hunger.
+    # After respawn, the player won't have a full health and food bar.
+    Death:
+      Loose Items On Death:
+        Enable: true
+        # Percentage of all of the players items that will get lost on death.
+        Percentage: 10
+        # Damage some tools from the list instead of completely removing them.
+        # Encourages players to use more valuable tools as they won't completely loose them on death.
+        Damage Tools By Percentage: 30
+        # If an already heavily damaged tool should be kept or completely destroyed.
+        Keep Heavily Damaged Tools: true
+        # Tool settings apply only to these tools
+        Tools:
+        - DIAMOND_SWORD
+        - DIAMOND_SPADE
+        - DIAMOND_PICKAXE
+        - DIAMOND_AXE
+        # These items will never be removed on death.
+        Blacklisted Items: []
+      Override Respawn Health:
+        Enable: true
+        # Percentage of total health that the player will spawn with. Works with custom max health.
+        Percentage: 75
+      # How many food hunches a player will spawn with
+      Respawn Foodlevel: 15
+    # Adds a weight system to your inventory. If your inventory exceeds the weight you will be pulled down 
+    # and eventually drown. This is to encourage players to use boats and make swimming up waterfalls harder.
+    No Swimming When Too Heavy:
+      Enable: true
+      # Set to false if you want to exempt players from drowning when swimming up 1x1 water streams.
+      Block Elevators/Waterfalls: true
+      # The maximum inventory weight you can have before starting to drown.
+      Max Points: 18.0
+      # One piece of worn armor would add 2.0 weight. So full set of armor adds 8.0
+      One Piece Of Worn Armor Adds: 2.0
+      # A stack of any item adds 1.0, half a stack add 0.5 so it calculates fractions
+      One Stack Adds: 1.0
+      # A tool is any item that doesn't stack, swords, axes, not worn armor, shears etc
+      One Tool Adds: 0.5
+      # Basically an esoteric percentage of how fast you drown. 35 actually doesnt really make you drown. 50 would make you drown
+      Drown Rate: 35
+      # If your inventory weight exceeds the max weight every weightpoint will add 2 to the drownrate.
+      # Weight = 25 => (base) + (exceeding) * (modifier) = 35 + 7 * 2 = 49 (new drown rate)
+      Overencumbrance Adds To Drown Rate: 2
+    Armor Changes:
+      # Enables slowdown of players wearing armor.
+      Enable: true
+      # Player speed with no armor. Minecraft default is 0.2.
+      # Slightly increased to 0.22 to give players with no armor an advantage.
+      Basespeed: 0.22
+      # How much percent players wearing a full diamond armor will be slowed down.
+      # This is the maximum slow down, the amount of armor points determines how much a player will be slowed down.
+      Slowdown Percentage: 40
+  General Monster Rules:
+    # This is an advanced anti monster grinder module. It will block drops if the monster
+    # spawned on an unnatural block, took too much damage from natural causes (falldmg etc.)
+    # cant reach a player or can not easily reach a player f.e. monster is in water.
+    Inhibit Monster Grinders: false
+    More Monsters:
+      Max Y: 55
+      # A simple multiplier to increase spawns under ground by increasing the packspawning size.
+      Multiplier: 2
+    Monsters Spawn In Light:
+      Max Y: 50
+      # 0-3: bats spawning, 0-7 normal mob spawning, 8-11 mobs are hostile but don't burn, 12+ mobs burn
+      Max Light: 10
+      # Spawns monsters at locations where player has been previously.
+      Percentage: 100
+  Horses:
+    Block Usage Of Chest Below: 55
+  # Instead of speeding Zombies up, a Zombie will slow a player down for a few seconds when the player is hit by a zombie.
+  # Zombies may resurrect when slain. They will respawn after a few seconds and might ambush a player.
+  Zombies:
+    Slow Players:
+      Enable: false
+      # Effect to apply to the player when he is hit.
+      Effect:
+        Potion Type: SLOW
+        Duration (ticks): 100
+        Amplifier: 1
+      Stack Effect:
+        # If the effect strength should be increased when a player is hit in succession
+        Enable: true
+        # Maximum strength of the effect that can be achieved.
+        Max Strength: 3
+    Reanimate:
+      # If zombie heads should be placed at the location where a zombie will resurrect
+      # Breaking the head will result in the zombie not resurrecting.
+      Place Skulls: false
+      # What percentage of the placed skulls should drop as an item, when broken before the zombie respawns.
+      Placed Skulls Drop Percentage: 5
+      # Percentage for the 1st respawn to occur. To reduce the amount of consecutive respawns the percentage reduced by 1/n respawns.
+      # F.e 1: 50%, 2: 1/2 of 50% = 25%, 3: 1/3 of 25% = 7.5% and so on
+      Percent: 50
+  Skeletons:
+    Shoot Snowballs:
+      Enable: true
+      Percent: 20
+      Blind Player (ticks): 100
+    Shoot Fireworks:
+      Enable: true
+      Percent: 30
+      Knockback Player Velocity: 1.0
+    Shoot Fireballs:
+      Enable: true
+      Percentage: 10
+      Player Fireticks: 40
+    Shoot Silverfish:
+      Enable: true
+      Percent: 20
+      Kill Silverfish After Skeleton Died: true
+      Limit To X Spawned At A Time: 5
+      Limit To X Spawned In Total: 15
+    Deflect Arrows Percent: 50
+  Silverfish:
+    Cant enter blocks: true
+    Drop Cobble: true
+    Show Particles To Make Better Visible: true
+  Spiders:
+    Bonus Underground Spawn Percent: 20
+    Drop Web On Death: true
+  Creepers:
+    Charged Creeper Spawn Percent: 10
+    Drop Tnt On Death:
+      Percent: 3
+      Max Y: 250
+    Charged Creepers Explode On Damage: true
+    Fire Triggers Explosion:
+      Enable: false
+      Firework Count: 3
+      Launch In Air Speed: 0.5
+  Blazes:
+    Near Bedrock Spawn Percent: 50
+    Block Drops In Overworld: true
+    Bonus Nether Spawn Percent: 20
+    Drop Fire On Damage: true
+    Bonus Loot: true
+    Nether Split On Death Percent: 25
+  MagmaCubes:
+    Spawn With Nether Blaze Percent: 100
+    Grow Into Blazes On Damage: false
+  PigZombies:
+    Always Angry: true
+    # This simple multiplier allows you to reduce the damage of PigZombies. They are a bit too tough otherwise.
+    Dmg to players percent: 70
+    # Add netherwart to the drops of pigzombies.
+    Always Drop Netherwart In Fortresses: true
+    Percent Chance to Drop Netherwart Elsewhere In Nether: 25
+    Spawn on Lighting Strikes:
+      Enable: true
+  Ghasts:
+    # Reduce the damage arrows do to Ghasts to make fights with Ghasts more challenging.
+    Arrows Do % Damage: 20
+    Exp Multiplier: 10
+    Drops Multiplier: 5
+  Endermen:
+    # No more easy killing by standing under a 3 high roof! An enderman may teleport a Player. Makes fights with enderman challenging and dangerous.
+    May Teleport Players: true
+  Witches:
+    # Includes spawning of baby zombies, explosions and teleporting
+    Additional Attacks: true
+    Bonus Spawn Percent: 5
+  EnderDragon:
+    Respawns: true
+    Drops Dragonegg: true
+    Drops 2 Villager Eggs: true
+    # Dragon summons minions including blazes and zombies. Can also aggro nearby endermen!
+    Harder Battle: true
+    # Announces in chat when someone is challenging the dragon or has beaten her.
+    Battle Announcements: true
+    # Block building in the end to prevent players from building big protective structures.
+    No Building Allowed: true
+  Farming:
+    Weak Crops:
+      Enable: false
+      Loss Rate: 25
+      Infertile Deserts: true
+      Snow Breaks Crops: true
+    Cant Craft Melonseeds: false
+    No Bonemeal On Mushrooms: true
+    No Farming Nether Wart: false
+    Sheep Grow Only White Wool: true
+    Buckets Dont Move Water Sources: false
+    Animal Experience Nerf: true
+    Iron Golem Nerf: true
+  Additional Falling Blocks:
+    Enable: true
+    Break Torches: true
+    # Whether a falling block that is broken by an obstructing block should drop as an item
+    Drop As Items: false
+    # When a falling block lands it checks if the blocks around it should fall as well. Can cascade downwards infinitely.
+    Landed Blocks Can Cause Blocks To Fall: false
+    # Should a falling block damage players when it lands on them.
+    Dmg Amount When Hitting Players: 2
+    Turn Mycel/Grass To Dirt: true
+    Enabled Blocks:
+    - MOSSY_COBBLESTONE
+    - SNOW_BLOCK
+    - GRASS
+    - DIRT
+    - COBBLESTONE
+    - NETHERRACK
+    - SOUL_SAND
+    - GLOWSTONE
+    - DOUBLE_STEP@3
+    - STEP@3,11
+    - MYCEL
+  Explosions:
+    # When enabled explosions will turn surrounding stone into cobblestone 
+    Turn Stone To Cobble: true
+    Physics:
+      # Makes explosions uber cool by throwing blocks up into the air
+      Enable: true
+      Enable For Plugin Created Explosions: true
+      # How many of the blocks that would have been destroyed should go flying instead
+      Blocks Affected Percentage: 20
+      # Following 2 variables basically determine the angle and speed in what the blocks go flying
+      Up Velocity: 2.0
+      Spread Velocity: 3.0
+      # Blocks exceeding this radius will no be placed in the world to avoid explosions uglying the landscape.
+      # Set to 0 if you want blocks to not be placed at all
+      Exceed Radius Autoremove: 10
+    # Determines where your surface is located. You can have seperate settings for the surface and caves.
+    Border Y: 55
+    Creeper:
+      Enable Custom Explosion: false
+      Below Border:
+        # 3 = default creeper, 4 = default tnt, 6 = default charged creeper
+        Explosion Power: 3
+        Set Fire: false
+        World Damage: true
+      Above Border:
+        Explosion Power: 3
+        Set Fire: false
+        # Disabling worlddamage allows you to have explosions that damage players above ground, but doesn't make a mess.
+        World Damage: true
+    Charged Creeper:
+      Enable Custom Explosion: true
+      Below Border:
+        Explosion Power: 6
+        Set Fire: false
+        World Damage: true
+      Above Border:
+        Explosion Power: 4
+        Set Fire: false
+        World Damage: true
+    Tnt:
+      Enable Custom Explosion: true
+      # Creates 3 explosions at random locations close to the original tnt
+      # Makes for more natural looking craters.
+      Enable Multiple Explosions: false
+      # Change recipe to yield 3 tnt instead of 1
+      Tnt Per Recipe: 1
+      Below Border:
+        Explosion Power: 6
+        Set Fire: false
+        World Damage: true
+      Above Border:
+        Explosion Power: 4
+        Set Fire: false
+        World Damage: true
+    Blazes Explode On Death:
+      Enable: true
+      Below Border:
+        Explosion Power: 4
+        Set Fire: true
+        World Damage: true
+      Above Border:
+        Explosion Power: 4
+        Set Fire: true
+        World Damage: true
+    Ghasts:
+      Enable Custom Explosion: true
+      Below Border:
+        Explosion Power: 2
+        Set Fire: true
+        World Damage: true
+      Above Border:
+        Explosion Power: 2
+        Set Fire: true
+        World Damage: true

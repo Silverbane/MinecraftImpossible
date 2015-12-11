@@ -1,0 +1,5 @@
+DATABASE: vt
+USERNAME: admin
+PASSWORD: password
+IP: localhost
+PORT: '3306'

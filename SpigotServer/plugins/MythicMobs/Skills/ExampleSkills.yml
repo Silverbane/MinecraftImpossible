@@ -1,0 +1,78 @@
+Points1:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4Gives you 1 point for killing"} @Trigger ~onDeath 1
+  - command{cmd="vt run Shared:AddPoints1 $player"} ~onDeath 1
+Points2:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4Gives you 2 points for killing."} @Trigger ~onDeath 1
+  - command{cmd="vt run Shared:AddPoints2 $player"} ~onDeath 1
+Points3:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4Gives you 3 points for killing."} @Trigger ~onDeath 1
+  - command{cmd="vt run Shared:AddPoints3 $player"} ~onDeath 1
+Points4:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4Gives you 4 points for killing."} @Trigger ~onDeath 1
+  - command{cmd="vt run Shared:AddPoints4 $player"} ~onDeath 1
+Points5:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4Gives you 5 points for killing."} @Trigger ~onDeath 1
+  - command{cmd="vt run Shared:AddPoints5 $player"} ~onDeath 1
+MerchantPull:
+  Cooldown: 15
+  Conditions:
+  - targetwithin 25
+  Skills:
+  - message{msg="$boss; &4Come and see my wares!"} @PlayersInRadius{r=30} 1
+  - teleport{spreadH=5} @Target 0.1
+  - pull{v=25} @Target 0.9
+SkullSuck:
+  Cooldown: 20
+  Conditions:
+  - targetwithin 2
+  Skills:
+  - message{msg="$boss; &4Yssss, sllllllppp bbrreeeen!"} @PlayersInRadius{r=30} 1
+  - mounttarget @Target 1
+  - rally{r=15;types=silverfish} @Self 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - dismount @Self
+Thorns:
+  Cooldown: 2
+  Conditions:
+  - targetwithin 4
+  Skills:
+  - message{msg="$boss; &4You are damaged by spikes on his armour. Stay back!"} @Trigger 1
+  - damage{a=4;i=false} @Trigger 1
+SummonSilverfish:
+  Cooldown: 20
+  Skills:
+  - message{msg="$boss; &4Blurg, my insides are falling out!"} @PlayersInRadius{r=30} 1
+  - delay 20
+  - summon{type=silverfish;a=2;r=5} @Self
+ConsumeSilverfish:
+  Cooldown: 20
+  Skills:
+  - message{msg="$boss; &4Ckkkrr, SSsss Cckkr!"} @PlayersInRadius{r=30} 1
+  - consume{d=10;h=10} @MobsInRadius{r=30;types=silverfish} >0 1
+SummonBabyVillager:
+  Cooldown: 15
+  Skills:
+  - message{msg="$boss; &4Help me! He ate me last friday! I am finnaly free!"} @PlayersInRadius{r=30} 1
+  - summon{type=villager;a=1;r=2} @Self
+UseBow:
+  Cooldown: 3
+  Skills:
+  - shoot{t=arrow;d=4;md=40;v=10} @Target >10 1

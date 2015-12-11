@@ -1,0 +1,111 @@
+CheckUpdates: true
+AutoDownloadUpdates: true
+ABSORPTION:
+  Enabled: true
+  Recipe: 11
+  Duration:
+    Normal: 45
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+BLINDNESS:
+  Enabled: true
+  Recipe: 7
+  Duration:
+    Normal: 45
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+CONFUSION:
+  Enabled: true
+  Recipe: 4
+  Duration:
+    Normal: 45
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+DAMAGE_RESISTANCE:
+  Enabled: true
+  Recipe: 5
+  Duration:
+    Normal: 120
+    Extended: 480
+  Potency:
+    Level1: 1
+    Level2: 2
+FAST_DIGGING:
+  Enabled: true
+  Recipe: 1
+  Duration:
+    Normal: 120
+    Extended: 480
+  Potency:
+    Level1: 1
+    Level2: 2
+HEALTH_BOOST:
+  Enabled: true
+  Recipe: 10
+  Duration:
+    Normal: 120
+    Extended: 480
+  Potency:
+    Level1: 1
+    Level2: 2
+HUNGER:
+  Enabled: true
+  Recipe: 8
+  Duration:
+    Normal: 45
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+JUMP:
+  Enabled: true
+  Recipe: 3
+  Duration:
+    Normal: 180
+    Extended: 480
+  Potency:
+    Level1: 1
+    Level2: 2
+SATURATION:
+  Enabled: true
+  Recipe: 12
+  Duration:
+    Normal: 30
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+SLOW_DIGGING:
+  Enabled: true
+  Recipe: 2
+  Duration:
+    Normal: 45
+    Extended: 120
+  Potency:
+    Level1: 1
+    Level2: 2
+WATER_BREATHING:
+  Enabled: false
+  Recipe: 6
+  Duration:
+    Normal: 180
+    Extended: 480
+  Potency:
+    Level1: 1
+    Level2: 2
+WITHER:
+  Enabled: true
+  Recipe: 9
+  Duration:
+    Normal: 10
+    Extended: 30
+  Potency:
+    Level1: 1
+    Level2: 2
+AutoDisableWaterBreathing: true

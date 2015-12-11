@@ -1,0 +1,111 @@
+Commands:
+  climb:
+    Override: true
+    Script:
+    - '@BROADCAST <playername> is attempting to cheat!'
+  spawn:
+    Override: true
+    Script:
+    - '@SETINT $<playername>.TimerTmp 0'
+    - '@IF s <worldname> = $Config.WorldName'
+    - ' @PLAYER Teleporting you to world spawn in 60 seconds. If you take damage during
+      this time teleportation will cancel.'
+    - ' @SETINT $<playername>.HealthCheck <health:>'
+    - ' @WHILE i <health:> >= $<playername>.HealthCheck'
+    - '   @PAUSE 1'
+    - '   @ADDINT $<playername>.TimerTmp 1'
+    - '   @IF i $<playername>.TimerTmp = 60'
+    - '     @CMDCON mv tp <playername> world'
+    - '     @EXIT'
+    - '   @ENDIF'
+    - ' @ENDWHILE'
+    - ' @PLAYER You took damage teleportation failed!'
+    - '@SETINT $<playername>.TimerTmp 0'
+    - '@ELSE'
+    - ' @PLAYER Teleporting you to servers home location.'
+    - ' @PAUSE 2'
+    - ' @CMDCON mv tp <playername> world'
+    - '@ENDIF'
+  WP:
+    Override: true
+    Script:
+    - '@IF s <worldname> = world'
+    - ' @IF si <cmdarg:1> = Game'
+    - '   @PLAYER Teleporting you Minecraft Impossible 2.0 a Survival Challenge Game.'
+    - '   @PAUSE 2'
+    - '   @CMDOP warp game'
+    - ' @ENDIF'
+    - ' @IF si <cmdarg:1> = City'
+    - '   @PLAYER Teleporting you to the City.'
+    - '   @PAUSE 2'
+    - '   @CMDOP warp city'
+    - ' @ENDIF'
+    - '@ENDIF'
+  settle:
+    Override: true
+    Script:
+    - '@IF s <worldname> = $Config.WorldName'
+    - ' @CALL Flag:Settle'
+    - '@ENDIF'
+  miadmin:
+    Override: true
+    Script:
+    - '@IF si <cmdarg:1> = help'
+    - ' @CALL <cmdarg:2>:Help'
+    - '@ELSE'
+    - ' @IF s <playername> = Nicklealias'
+    - ' @OR s <playername> = Silverbane'
+    - '   @OPENINV Admin'
+    - ' @ENDIF'
+    - '@ENDIF'
+  mi:
+    Override: true
+    Script:
+    - '@IF si <cmdarg:1> = help'
+    - ' @CALL <cmdarg:2>:Help'
+    - '@ELSE'
+    - ' @IF s <worldname> = HardWorld'
+    - '   @OPENINV Menu'
+    - ' @ELSE'
+    - '   @IF s <worldname> = world'
+    - '     @OPENINV Setup'
+    - '   @ENDIF'
+    - ' @ENDIF'
+    - '@ENDIF'
+  flag:
+    Override: true
+    Script:
+    - '@IF si <cmdarg:1> = help'
+    - ' @CALL <cmdarg:2>:Help'
+    - '@ELSE'
+    - ' @IF s <worldname> = HardWorld'
+    - '   @OPENINV Flag'
+    - ' @ELSE'
+    - '   @IF s <worldname> = world'
+    - '     @OPENINV Setup'
+    - '   @ENDIF'
+    - ' @ENDIF'
+    - '@ENDIF'
+  miaccept:
+    Override: true
+    Script:
+    - '@IF b $HardWorld.<cmdarg:1>OnTeam != True'
+    - ' @PLAYER You have accepted <cmdarg:1> to $<playername>.SMTeam team.'
+    - ' @SETSTR $<cmdarg:1>.InviteAccept $<playername>.SMTeam'
+    - ' @CMDCON msg <cmdarg:1> <playername> has accepted you to team $<playername>.SMTeam'
+    - ' @CMDOP mail send <cmdarg:1> <playername> has accepted you to team $<playername>.SMTeam'
+    - ' @CMDCON vt run NewGame:JoinTeamAccept <cmdarg:1>'
+    - '@ELSE'
+    - ' @PLAYER To late <cmdarg:1> has already joined a team.'
+    - '@ENDIF'
+  miinvite:
+    Override: true
+    Script:
+    - '@IF b $HardWorld.<cmdarg:1>OnTeam != True'
+    - ' @PLAYER You have invited <cmdarg:1> to $<playername>.SMTeam team.'
+    - ' @SETSTR $<cmdarg:1>.InviteAccept $<playername>.SMTeam'
+    - ' @CMDCON msg <cmdarg:1> <playername> has invited you to team $<playername>.SMTeam'
+    - ' @CMDOP mail send <cmdarg:1> <playername> has invited you to team $<playername>.SMTeam'
+    - '@ELSE'
+    - ' @PLAYER To late <cmdarg:1> has already joined a team.'
+    - '@ENDIF'

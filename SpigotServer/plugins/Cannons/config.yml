@@ -1,0 +1,145 @@
+general:
+  #sets debug mode on or off. Turn off if you do not want to see as much info on in the server console or log files
+  debugMode: false
+
+
+cannonLimits:
+  #limits regarding how many cannons a player can build. set to false if you dont need it
+  useLimits: false
+  buildLimitA: 1
+  buildLimitB: 100
+
+
+keepProjectileAlive:
+  #projectile will only be updated by minecraft if a player is close to it. Enable this to keep them alive forever
+  enabled: true
+  #teleports the projectile to the expected location when the difference is too big
+  teleportProjectile: 5.0
+
+
+tools:
+  #the item a player needs to be holding to adjust the aim of a cannon. Default is none.
+  ajust: '0:0'
+  #the item used to autoaim a cannon. Default is clock
+  autoaim: '347:0'
+  #the item used to fire a cannon. Default is flint and steel. Not every cannon needs a FiringItem.
+  #a data value of -1 means that every durability is accepted for flint and steel
+  firing: '259:-1'
+  #required for cleaning a cannon after firing and pushing a projectile against the gunpowder
+  ramrod: '280:0'
+  #item used to rotate a cannon 90 degrees. Not implemented yet
+  rotatingItem: '350:0'
+  #item to measure the cannon temperature. Default is a gold nugget
+  thermometer: '371:0'
+
+
+#fake blocks/sound that are send to the player, to make effects visible at large distance
+imitatedEffects:
+  #is the player closer than this distance, there will be no fake block
+  minimumBlockDistance: 80
+  #if the player is above this distance, there will be no fake block
+  maximumBlockDistance: 200
+  #if the player is above this distance, there will be no sound
+  maximumSoundDistance: 200
+
+  explosion:
+    #are imitated blocks enabled
+    enabled: true
+    #size of the impact imitated explosion
+    sphereSize: 3
+    #material of the imitated explosion (default is a active redstone lamp '124:0')
+    material: '124:0'
+    #how long the effect will be displayed [s]
+    time: 2
+
+  #firing effect if the player is far away and display the aiming angle of the cannon
+  aiming:
+    #set to true to show a line of blocks while aiming
+    enabled: true
+    #how long the aiming vector will be. Longer means it is easier to see where you are aiming
+    length: 5
+    #this block will used to display the angle
+    block: '20:0'
+    #how long the effect will be displayed [s]
+    time: 0.5
+
+  firing:
+    #will show fake blocks for players which are far away
+    enabled: true
+    #firing will show fire blocks if the player is far away
+    fireBlock: '35:14'
+    #firing will show smoke blocks if the player is far away
+    smokeBlock: '30:0'
+    #how long the effect will be displayed [s]
+    time: 2
+
+  predictor:
+    #shows the impact of the projectile for a loaded cannon
+    enabled: true
+    #how many iterations until the projectile hits the surface
+    maxIterations: 500
+    #the predictor will work for this distance (muzzle to impact)
+    maxDistance: 200.0
+    #fake block which shows the impact location
+    material: '124:0'
+    #how long the effect will be displayed [s]
+    time: 0.5
+
+
+#enter here the blocks which require the superbreaker ability to destroy.
+#e.g. if you enter here the enchantment table it requires a projectile with superbreaker to be destroyed.
+#else it can be destroyed by normal explosions
+superbreakerBlocks:
+  #water
+  - 8
+  - 9
+  #lava
+  - 10
+  - 11
+  #obsidian
+  - 49
+  #enchantmenttable
+  - 116
+  #enderchest
+  - 130
+  #anvil
+  - 145
+#blocks which can't be destroyed by penetration of the projectile.
+#normal minecraft explosions are not affected by this option.
+
+
+unbreakableBlocks:
+  # bedrock
+  - 7
+
+
+#some items will consumed when used as projectile (e.g. a egg will be thrown) and the event has to be canceled, else the item can't be used as projectile
+#you can also enter here a lever to use it as right click trigger not as redstone trigger.
+cancelEventForLoadingItem:
+  #EGG
+  - 344
+  #SNOW_BALL
+  - 332
+  #SPAWN_EGG
+  - 383
+  #ENDER_PEARL
+  - 368
+  #FIREWORK
+  - 401
+  #REDSTONE
+  - 331
+
+
+database:
+  #database implementation. Default is SQLite, can be changed to MySql if you change the driver.  
+  username: bukkit
+  password: walrus
+  isolation: SERIALIZABLE
+  driver: org.sqlite.JDBC
+  url: jdbc:sqlite:{DIR}{NAME}.db
+  #mysql example
+  #username: {USERNAME}
+  #password: {PASSWORD}
+  #isolation: SERIALIZABLE
+  #driver: com.mysql.jdbc.Driver
+  #url: jdbc:mysql://{IP}:{PORT}/{DATABASENAME}
