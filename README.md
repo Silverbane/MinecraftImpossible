@@ -1,5 +1,7 @@
-Silversky Entertainment
-A Minecraft Impossible Server Configuration Collection
+# MinecraftImpossible
+A Minecraft Spigot Server Configuration Collection
+
+Collected and Modified by Silversky Entertainment
 Version:a1.0
 
 I want to invite you and your friends to a survival Challenge: 
