@@ -17,6 +17,7 @@ BuildComplete:
   Script:
 #    - execute as_server "broadcast LOG <npc.owner.name> setbool <npc.location.world.name> <npc.name.nickname>Building False"
     - execute as_server "vt setbool <npc.location.world.name> <npc.name.nickname>Building False"
+    - execute as_server "vt setbool <npc.location.world.name> <npc.name.nickname>ActivateCB True"
     - execute as_server "vt run Shared:BuildComplete <npc.owner.name>"
     - execute as_npc "npc select <npc.id>"
     - execute as_npc "npc remove"
