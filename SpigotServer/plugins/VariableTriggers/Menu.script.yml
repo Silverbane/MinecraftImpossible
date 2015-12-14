@@ -36,6 +36,7 @@ Scripts:
     - '     @IF b $<worldname>.<var:$<playername>.SMTeam>Building = True'
     - '       @PLAYER Your team needs to complete their current building first before
       starting another building project.'
+    - '     @ELSE'
     - '       @IF b $<worldname>.<var:$<playername>.SMTeam>ActivateCB = True'
     - '         @CMDCON title <playername> title {text:"ERROR Activate Structure First",color:red}'
     - '         @PLAYER You need to activate a structure first before moving on to building another.'
