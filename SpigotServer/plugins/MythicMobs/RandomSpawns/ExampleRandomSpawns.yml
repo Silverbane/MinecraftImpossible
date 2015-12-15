@@ -52,3 +52,9 @@ RandomGlowWorm:
   Chance: 0.005
   Priority: 7
   Action: add
+TestGitHub:
+  MobType: SkeletonMerchant
+  Worlds: HardWorld
+  Chance: 0.02
+  Priority: 1
+  Action: add
