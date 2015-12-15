@@ -57,4 +57,4 @@ TestGitHub:
   Worlds: HardWorld
   Chance: 0.02
   Priority: 1
-  Action: add
+  Action: replace
