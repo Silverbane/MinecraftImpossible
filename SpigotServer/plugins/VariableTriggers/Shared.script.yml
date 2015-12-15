@@ -1038,6 +1038,7 @@ Scripts:
     - '@CMDCON title <playername> title {text:"Building $<worldname>.<var:$<worldname>.<playername>BuildingID>Category Activated ",color:red}'
     - '@CMDCON title <playername> subtitle {text:"your team can now build other structures.",color:yellow}'
     - '@SETBOOL $<worldname>.<var:$<playername>.SMTeam>ActivateCB False'
+    - '@SETBOOL $<worldname>.<playername>ActivateCBLoop False'
     - '@SETINT $<worldname>.<playername>ActivateCBTime 0'
   IDGenerator:
     Script:
@@ -1270,7 +1271,9 @@ Scripts:
     - '     @SETBOOL $<worldname>.<playername>ActivateCBLoop False'
     - '     @SETINT $<worldname>.<playername>ActivateCBTime 0'
     - '   @ELSE'
-    - '     @TP $<worldname>.<playername>PlanStartLoc'
+    - '     @IF b $<worldname>.<playername>ActivateCBLoop = True'
+    - '       @TP $<worldname>.<playername>PlanStartLoc'
+    - '     @ENDIF'
     - '   @ENDIF'
     - ' @ENDWHILE'
     - ' @SETINT $<worldname>.<playername>ActivateCBTime 0'
