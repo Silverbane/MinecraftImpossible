@@ -1,0 +1,163 @@
+GlowWorm:
+  Type: SILVERFISH
+  Display: '&6Glow Worm'
+  Health: 60
+  Damage: 6
+  Skills:
+  - skill{s=Thorns} @Trigger >0 0.05
+  - skill{s=SummonSilverfish} @Self >0 0.3
+  - skill{s=ConsumeSilverfish} @Self <30 0.1
+  - skill{s=SkullSuck} @Target >0 0.5
+  - skill{s=Points5} @Trigger ~onDeath 1
+  Equipment:
+  Drops:
+  - GlowWormDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.7
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+ThornedZombie:
+  Type: ZOMBIE
+  Display: '&6Thorned Zombie'
+  Health: 30
+  Damage: 6
+  Skills:
+  - skill{s=Thorns} @Trigger >0 0.4
+  - skill{s=Points2} @Trigger ~onDeath 1
+  Equipment:
+  - iron_helmet:4
+  - iron_chestplate:3
+  Drops:
+  - ThornedDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.3
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+ThornedZombieTank:
+  Type: ZOMBIE
+  Display: '&6Thorned Zombie Tank'
+  Health: 50
+  Damage: 6
+  Skills:
+  - skill{s=Thorns} @Trigger >0 0.4
+  - skill{s=Points5} @Trigger ~onDeath 1
+  Equipment:
+  - iron_helmet:4
+  - iron_chestplate:3
+  - iron_leggings:2
+  - iron_boots:1
+  Drops:
+  - ThornedTankDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+BloatedZombie:
+  Type: ZOMBIE
+  Display: '&6Bloated Zombie'
+  Health: 80
+  Damage: 6
+  Skills:
+  - skill{s=SummonSilverfish} @Self >0 0.2
+  - throw{v=5;vy=3} @Trigger >0 0.8
+  - skill{s=SummonBabyVillager} @Self ~onDeath 0.8
+  - skill{s=Points3} @Trigger ~onDeath 1
+  Equipment:
+  - leather_helmet:4
+#  - leather_leggings:2
+  - leather_chestplate:3
+#  - leather_boots:1
+  Drops:
+  - BloatedDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+ZombieMerchant:
+  Type: ZOMBIE
+  Display: '&6Zombie Merchant'
+  Health: 40
+  Damage: 6
+  Skills:
+  - skill{s=MerchantPull} @Target <10 0.05
+  - skill{s=Points2} @Trigger ~onDeath 1
+  Equipment:
+  - leather_helmet:4
+#  - leather_leggings:2
+#  - leather_chestplate:3
+#  - leather_boots:1
+  Drops:
+  - MerchantDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+ZombieBattleMerchant:
+  Type: ZOMBIE
+  Display: '&6Zombie Battle Merchant'
+  Health: 40
+  Damage: 6
+  Skills:
+  - skill{s=MerchantPull} @Target <10 0.05
+  - skill{s=Points4} @Trigger ~onDeath 1
+  Equipment:
+  - MerchantSword:0
+  - leather_helmet:4
+  - leather_leggings:2
+  - leather_chestplate:3
+  - leather_boots:1
+  Drops:
+  - BattleMerchantDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.3
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+ZombieRichMerchant:
+  Type: ZOMBIE
+  Display: '&6Zombie Rich Merchant'
+  Health: 30
+  Damage: 6
+  Skills:
+  - skill{s=MerchantPull} @Target <10 0.05
+  - skill{s=Points5} @Trigger ~onDeath 1
+  Equipment:
+  - MerchantSword:0
+  - 314:4
+  - 316:2
+  - 315:3
+  - 317:1
+  Drops:
+  - RichMerchantDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+SkeletonMerchant:
+  Type: SKELETON
+  Display: '&6Skeleton Merchant'
+  Health: 40
+  Damage: 6
+  Skills:
+  - skill{s=MerchantPull} @Target <20 0.05
+  - skill{s=UseBow} @Target >10 0.75
+  - skill{s=Points2} @Trigger ~onDeath 1
+  Equipment:
+  - MerchantBow:0
+  - leather_helmet:4
+#  - leather_leggings:2
+#  - leather_chestplate:3
+#  - leather_boots:1
+  Drops:
+  - ArcherMerchantDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false

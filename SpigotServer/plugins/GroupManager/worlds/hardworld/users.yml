@@ -1,0 +1,70 @@
+users:
+  0c70f680-dac6-425d-85d7-1fabcb178be4:
+    lastname: raetara
+    group: Default
+    subgroups:
+    - '0'
+    permissions: []
+  273267dc-485c-4add-818b-e1fa931f43b1:
+    lastname: Binkabobo
+    group: Default
+    subgroups:
+    - Blue
+    permissions: []
+  322a431e-504c-47d1-8233-f1b1eb937f16:
+    lastname: GGron
+    group: Default
+    subgroups:
+    - Blue
+    permissions: []
+  5140f688-861f-4780-a210-0e8ba54492e5:
+    lastname: Silverbane
+    group: Default
+    subgroups:
+    - Green
+    - Blue
+    - Yellow
+    - Black
+    permissions: []
+  7d2fe7a8-2ea8-4908-9c6e-54266847a963:
+    lastname: Steener75
+    group: Default
+    subgroups:
+    - '0'
+    - Green
+    permissions: []
+  83887923-55e0-4331-8179-f11da00c95c2:
+    lastname: kappa4484
+    group: Default
+    subgroups:
+    - Green
+    - Blue
+    - Black
+    permissions: []
+  edc11073-490e-4970-ad55-324af14b3142:
+    lastname: Nicklealias
+    group: Default
+    subgroups:
+    - Blue
+    - Yellow
+    permissions: []
+  ElgarL:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  KHobbits:
+    group: Moderator
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms
+  Mook_To_Go:
+    group: Default
+    subgroups:
+    - Green
+    permissions: []
+  snowleo:
+    group: Builder
+    subgroups: []
+    permissions:
+    - groupmanager.noofflineperms

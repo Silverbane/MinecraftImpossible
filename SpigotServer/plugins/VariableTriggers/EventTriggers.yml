@@ -1,0 +1,301 @@
+worldc_Nicklealias:
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Admin:IEvent'
+worldc_natersteen:
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Admin:IEvent'
+world:
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Menu:GameProperties'
+    - '@CALL Menu:SpawnWarps'
+    - '@CALL Admin:IEvent'
+    - '@CALL Menu:Setup'
+    - '@CALL Menu:SetupTeamSelect'
+    - '@CALL Menu:LOADING'
+  Join:
+    CoolDown: 0
+    Script:
+    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
+      developing by donating through paypal at http://paypal.me/NathanSteen'
+    - '@CALL Shared:FirstJoin'
+HardWorld:
+  EntityDeath:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:CheckPoints'
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Tech:IEvent'
+    - '@CALL Ballistics:IEvent'
+    - '@CALL Barracks:IEvent'
+    - '@CALL Admin:IEvent'
+    - '@CALL Fletcher:IEvent'
+    - '@CALL Barn:IEvent'
+    - '@CALL Menu:LOADING'
+    - '@CALL Menu:Menu'
+    - '@CALL Menu:PatchNotes'
+    - '@CALL Menu:BuilderControl'
+    - '@CALL Flag:IEvent'
+    - '@CALL Shared:EndIEvent'
+  PlayerDeath:
+    CoolDown: 0
+    Script:
+    - '@IF b $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      = True'
+    - ' @IF b $HardWorld.<playername>FlagHold = True'
+    - '   @SETBOOL $HardWorld.<playername>FlagHold False'
+    - '   @SETBOOL $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      False'
+    - '   @BROADCAST Team $<playername>.SMTeam failed to take Team $HardWorld.<playername>FlagStolenOwner
+      flag.'
+    - ' @ENDIF'
+    - ' @SETSTR $HardWorld.<playername>FlagLoc 0.0,0.0,0.0 0.0 0.0'
+    - '@ENDIF'
+  Join:
+    CoolDown: 0
+    Script:
+    - '@IF b $Setup.Active != True'
+    - ' @PLAYER There is no current game running. You will be teleported back to server
+      spawn.'
+    - ' @CMDOP warp spawn'
+    - ' @PAUSE 2'
+    - ' @CALL Shared:FirstJoin'
+    - '@ELSE'
+    - ' @IF b $HardWorld.<playername>SMSpawned != True'
+    - '   @PLAYER There is a game running but you have not selected a team. You will
+      be teleported back to server spawn.'
+    - '   @CMDOP warp spawn'
+    - '   @PAUSE 2'
+    - '   @CALL Shared:FirstJoin'
+    - ' @ENDIF'
+    - '@ENDIF'
+    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
+      developing by donating through paypal at http://paypal.me/NathanSteen'
+  Respawn:
+    CoolDown: 0
+    Script:
+    - '@CMDCON effect <playername> 11 15 5'
+    - '@CMDCON effect <playername> 4 15 5'
+    - '@CMDCON effect <playername> 18 15 5'
+    - '@CMDCON effect <playername> 1 15 2'
+    - '@IF i <secondticks:0> >= $<playername>.SMRepawnTime'
+    - ' @CMDOP scoreboard players remove <playername> SHard 5'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
+    - ' @SUBINT $HardWorld.<playername>Score 5'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
+      Monsters for 15 seconds in a 45 meter radius!'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @LOOP 3'
+    - '   @PAUSE 5'
+    - '   @CMDOP killall monsters 45'
+    - '   @SOUNDEX ENDERMAN_TELEPORT 1.0 1.0 <currentloc:<playername>>'
+    - ' @ENDLOOP'
+    - '@ELSE'
+    - ' @CMDOP scoreboard players remove <playername> SHard 1'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 1'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 1'
+    - ' @SUBINT $HardWorld.<playername>Score 1'
+    - ' @PLAYER You have lost 1 point for team <var:$<playername>.SMTeam>! Nuking
+      Monsters for 10 seconds in a 25 meter radius!'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @LOOP 2'
+    - '   @PAUSE 5'
+    - '   @CMDOP killall monsters 25'
+    - '   @SOUNDEX ENDERMAN_TELEPORT 1.0 1.0 <currentloc:<playername>>'
+    - ' @ENDLOOP'
+    - ' @PLAYER Note during the 5 minute death penality timer you only lose 1 point
+      for every death.'
+    - '@ENDIF'
+  BlockBreak:
+    CoolDown: 0
+    Script:
+    - '@IF i <blockid> = 49'
+    - '  @EXPLOSION 0.0 <triggerloc>'
+    - '@ENDIF'
+    - '@IF i <blockid> = 13'
+    - ' @SETINT $<playername>.RandomNumberTemp <random1to:50>'
+    - ' @IF i $<playername>.RandomNumberTemp = 7'
+    - '   @DROPITEM Emerald 1 NONE <triggerloc>'
+    - '   @PLAYER You find something shiney in the gravel'
+    - ' @ENDIF'
+    - '@ENDIF'
+HardWorld_nether:
+  EntityDeath:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:CheckPoints'
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Admin:IEvent'
+    - '@PLAYER Return to the normal world before attempting to use this menu.'
+    - '@CLOSEINV <playername>'
+  PlayerDeath:
+    CoolDown: 0
+    Script:
+    - '@IF s $<playername>.SMTeam != $<killername>.SMTeam'
+    - '@AND s <killername> != 0'
+    - ' @BROADCAST Team $<killername>.SMTeam has killed a member of Team $<playername>.SMTeam'
+    - '@ENDIF'
+    - '@IF b $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      = True'
+    - ' @IF b $HardWorld.<playername>FlagHold = True'
+    - '   @SETBOOL $HardWorld.<playername>FlagHold False'
+    - '   @SETBOOL $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      False'
+    - '   @BROADCAST Team $<playername>.SMTeam failed to take Team $HardWorld.<playername>FlagStolenOwner
+      flag.'
+    - ' @ENDIF'
+    - ' @SETSTR $HardWorld.<playername>FlagLoc 0.0,0.0,0.0 0.0 0.0'
+    - '@ENDIF'
+  Join:
+    CoolDown: 0
+    Script:
+    - '@IF b $Setup.Active != True'
+    - ' @PLAYER There is no current game running. You will be teleported back to server
+      spawn.'
+    - ' @CMDOP warp spawn'
+    - ' @PAUSE 2'
+    - ' @CALL Shared:FirstJoin'
+    - '@ELSE'
+    - ' @IF b $HardWorld.<playername>SMSpawned != True'
+    - '   @PLAYER There is a game running but you have not selected a team. You will
+      be teleported back to server spawn.'
+    - '   @CMDOP warp spawn'
+    - '   @PAUSE 2'
+    - '   @CALL Shared:FirstJoin'
+    - ' @ENDIF'
+    - '@ENDIF'
+    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
+      developing by donating through paypal at http://paypal.me/NathanSteen'
+  Respawn:
+    CoolDown: 0
+    Script:
+    - '@CMDCON effect <playername> 11 15 5'
+    - '@CMDCON effect <playername> 4 15 5'
+    - '@CMDCON effect <playername> 18 15 5'
+    - '@CMDCON effect <playername> 1 15 2'
+    - '@IF i <secondticks:0> >= $<playername>.SMRepawnTime'
+    - ' @CMDOP scoreboard players remove <playername> SHard 5'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
+    - ' @SUBINT $HardWorld.<playername>Score 5'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
+      Monsters!'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @CMDOP killall monsters 150'
+    - '@ELSE'
+    - ' @PLAYER You did not lose any points due to death penalty timer.'
+    - '@ENDIF'
+    - '@SETBOOL $HardWorld.<playername>FlagTpAvail True'
+    - '@PLAYER You have 30 seconds to use command /wp flag to warp to your teams flags
+      spawnpoint.'
+    - '@PAUSE 30'
+    - '@SETBOOL $HardWorld.<playername>FlagTpAvail False'
+  BlockBreak:
+    CoolDown: 0
+    Script:
+    - '@IF i <blockid> = 49'
+    - '  @EXPLOSION 0.0 <triggerloc>'
+    - '@ENDIF'
+    - '@IF i <blockid> = 13'
+    - ' @SETINT $<playername>.RandomNumberTemp <random1to:50>'
+    - ' @IF i $<playername>.RandomNumberTemp = 7'
+    - '   @DROPITEM Emerald 1 NONE <triggerloc>'
+    - '   @PLAYER You find something shiney in the gravel'
+    - ' @ENDIF'
+    - '@ENDIF'
+HardWorld_the_end:
+  EntityDeath:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:CheckPoints'
+  Inventory:
+    CoolDown: 0
+    Script:
+    - '@CALL Admin:IEvent'
+    - '@PLAYER Return to the normal world before attempting to use this menu.'
+    - '@CLOSEINV <playername>'
+  PlayerDeath:
+    CoolDown: 0
+    Script:
+    - '@IF s $<playername>.SMTeam != $<killername>.SMTeam'
+    - '@AND s <killername> != 0'
+    - ' @BROADCAST Team $<killername>.SMTeam has killed a member of Team $<playername>.SMTeam'
+    - '@ENDIF'
+    - '@IF b $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      = True'
+    - ' @IF b $HardWorld.<playername>FlagHold = True'
+    - '   @SETBOOL $HardWorld.<playername>FlagHold False'
+    - '   @SETBOOL $HardWorld.<var:$HardWorld.<playername>FlagStolenOwner>FlagUnderAttack
+      False'
+    - '   @BROADCAST Team $<playername>.SMTeam failed to take Team $HardWorld.<playername>FlagStolenOwner
+      flag.'
+    - ' @ENDIF'
+    - ' @SETSTR $HardWorld.<playername>FlagLoc 0.0,0.0,0.0 0.0 0.0'
+    - '@ENDIF'
+  Join:
+    CoolDown: 0
+    Script:
+    - '@IF b $HardWorld.GameMasterGameDrop != True'
+    - ' @PLAYER There is no current game running. You will be teleported back to server
+      spawn.'
+    - ' @CMDOP warp spawn'
+    - ' @PAUSE 2'
+    - ' @CALL Shared:FirstJoin'
+    - '@ELSE'
+    - ' @IF b $HardWorld.<playername>SMSpawned != True'
+    - '   @PLAYER There is a game running but you have not selected a team. You will
+      be teleported back to server spawn.'
+    - '   @CMDOP warp spawn'
+    - '   @PAUSE 2'
+    - '   @CALL Shared:FirstJoin'
+    - ' @ENDIF'
+    - '@ENDIF'
+    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
+      developing by donating through paypal at http://paypal.me/NathanSteen'
+  Respawn:
+    CoolDown: 0
+    Script:
+    - '@CMDCON effect <playername> 11 15 5'
+    - '@CMDCON effect <playername> 4 15 5'
+    - '@CMDCON effect <playername> 18 15 5'
+    - '@CMDCON effect <playername> 1 15 2'
+    - '@IF i <secondticks:0> >= $<playername>.SMRepawnTime'
+    - ' @CMDOP scoreboard players remove <playername> SHard 5'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
+    - ' @SUBINT $HardWorld.<playername>Score 5'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
+      Monsters!'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @CMDOP killall monsters 150'
+    - '@ELSE'
+    - ' @PLAYER You did not lose any points due to death penalty timer.'
+    - '@ENDIF'
+    - '@SETBOOL $HardWorld.<playername>FlagTpAvail True'
+    - '@PLAYER You have 30 seconds to use command /wp flag to warp to your teams flags
+      spawnpoint.'
+    - '@PAUSE 30'
+    - '@SETBOOL $HardWorld.<playername>FlagTpAvail False'
+  BlockBreak:
+    CoolDown: 0
+    Script:
+    - '@IF i <blockid> = 49'
+    - '  @EXPLOSION 0.0 <triggerloc>'
+    - '@ENDIF'
+    - '@IF i <blockid> = 13'
+    - ' @SETINT $<playername>.RandomNumberTemp <random1to:50>'
+    - ' @IF i $<playername>.RandomNumberTemp = 7'
+    - '   @DROPITEM Emerald 1 NONE <triggerloc>'
+    - '   @PLAYER You find something shiney in the gravel'
+    - ' @ENDIF'
+    - '@ENDIF'

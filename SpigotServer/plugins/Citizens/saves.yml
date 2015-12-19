@@ -1,0 +1,53 @@
+# Citizens NPC Storage
+
+
+
+
+
+
+
+
+
+
+
+last-created-npc-id: 110
+npc:
+  '99':
+    metadata:
+      cached-skin-uuid: 03a93871-8d1a-4aff-bc4d-14d4fbb70b49
+      cached-skin-uuid-name: BlueBob
+    name: BlueBob
+    uuid: a3ad2534-d70a-402b-8d2d-f436814854c3
+    traits:
+      owner:
+        owner: Nicklealias
+        uuid: edc11073-490e-4970-ad55-324af14b3142
+      spawned: true
+      builder:
+        toggled: true
+        IgnoreAir: false
+        IgnoreLiquid: false
+        Excavate: false
+        Silent: false
+        State: idle
+        PatternXY: spiral
+        HoldItems: true
+        RequireMaterials: false
+        MoveTimeoutSeconds: '2.0'
+        YOffset: 0
+        YLayers: 0
+      location:
+        world: HardWorld
+        x: '409.0'
+        y: '63.0'
+        z: '35.0'
+        yaw: '270.7498779296875'
+        pitch: '89.55000305175781'
+      inventory: {}
+    traitnames: type,owner,spawned,builder,location,inventory
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true

@@ -1,0 +1,100 @@
+#                    _                 _     
+#        /\         (_)               | |    
+#       /  \   _ __  _ _ __ ___   __ _| |    
+#      / /\ \ | '_ \| | '_ ` _ \ / _` | |    
+#     / ____ \| | | | | | | | | | (_| | |    
+#    /_/    \_\_|_|_|_|_| |_| |_|\__,_|_|    
+#           |  __ \| |                       
+#           | |__) | | __ _  __ _ _   _  ___ 
+#           |  ___/| |/ _` |/ _` | | | |/ _ \
+#           | |    | | (_| | (_| | |_| |  __/
+#           |_|    |_|\__,_|\__, |\__,_|\___|
+#                            __/ |           
+#                           |___/    					
+# 	   ____                     _                       	
+# 	  |  _ \       _      /\   (_)                      	
+# 	  | |_) |_   _(_)    /  \   _  __ ___  ____ _ _ __  	
+# 	  |  _ <| | | |     / /\ \ | |/ _` \ \/ / _` | '_ \ 	
+# 	  | |_) | |_| |_   / ____ \| | (_| |>  < (_| | | | |	
+# 	  |____/ \__, (_) /_/    \_\ |\__,_/_/\_\__,_|_| |_|	
+# 	          __/ |           _/ |                      	
+# 	         |___/           |__/                      		
+#															
+###----------------------- Config ------------------------###
+###   Here are the configurable options for the plugin    ###
+###        For help, contact me on my Bukkit page         ###
+###   http://dev.bukkit.org/bukkit-plugins/animal-plague/ ###
+###               Suggestions are welcome!                ###
+###-------------------------------------------------------###
+
+### DESCRIPTION ###
+# The animal plague is designed to do two things.
+#    1) Make the game harder by making it possible to lose herds
+#       of animals.
+#    2) Keep lag down by killing animals when there are too many.
+#
+# Depending on the settings below, you can create an unstoppable
+# plague that wipes out all animals in its path, or a small 
+# control plague that will only kill newly spawned animals when
+# a herd gets too large. It is highly recommended that you
+# configure your plague before setting it loose on the world.
+# They currently configured plague is very contagious and will
+# appear after only 20 animals are found inside a 20 x 20 x 20
+# cube.
+
+# This list is all animals that can catch the plague. All animals
+# are effected equally. When ever I refer to "animals" I am
+# refering to this list.
+PlagueAnimals:
+  - SHEEP
+  - COW
+  - PIG
+  - CHICKEN
+
+# The plague works in stages.
+#    1) Symptoms and weakness: During this stage the animal
+#       becomes weaker and symptoms will start to appear.
+#    2) Spreading: During this stage the infected animal will
+#       start to infect others. 
+#    3) Death: In this stage the animal is killed.
+
+
+# leave this off unless the plugin is not working. 
+# Use this to help report errors to me or fix them yourself.
+Debug: false
+
+### STAGE ZERO ###
+
+# The amount of animals that need to be within a certain area for
+# a plague to start.
+AnimalAmount: 20 
+# This radius is centered at the newly spawned Animal. 
+Radius: 5 # This means a 10 x 10 x 10 cube
+
+# Testing a 3 minecraft day plauge cycle 7200 Seconds on our server.
+### STAGE ONE ###
+
+# Use this setting to set the time between when an infected animal
+# spawns and when its first visible symptoms appear. This time is
+# measured in ticks.  20 ticks = 1 second
+PlagueStartTime: 12000 # 12000 ticks = 10 minutes
+
+### STAGE TWO ###
+
+# The infection chance. The plague will try to infect a new animal
+# every five seconds. This is the chance that an infection will
+# occur. 0 means no chance and 10 means 100% chance.
+InfectionChance: 0.1
+
+### STAGE THREE ###
+
+# The amount of time an animal will survive after having its
+# first noticeable symptoms. An animals life span with the plague
+# can be measured by adding the PlagueStartTime and
+# the PlagueKillDelay.
+#Measured in intervals of 5 seconds.
+PlagueKillDelay: 1320 # so 9 * 5 = 45 seconds delay.
+# 45 + 60(PlagueStartTime) = 1 min and 45 sec life span.
+
+
+# Congrats! You can now go watch you plague at work.

@@ -1,0 +1,72 @@
+#
+# Modify this file to change the overall behavior of the Magic plugin.
+# only include the options you want to modify.
+#
+# To see all available options, look in the defaults/config.defaults.yml file.
+#
+# Options for sub-components (spells, wand templates, chest populator, etc) are 
+# found in separate files.
+#
+
+#
+# This is the general configuration file for the magic plugin.
+# 
+# Wand and Spell configurations are separate, in wands.yml and spells.yml.
+# Localizations are also separate, in messages.yml. 
+#
+
+# For example, to make it so all construction spells automatically undo their effects
+# after ten seconds:
+#
+# general:
+#   auto-undo: 10000
+#
+# More examples can be found at
+# 
+# https://github.com/elBukkit/MagicPlugin/tree/master/src/main/resources/examples
+#
+
+# Some common fields that you might like to override:
+
+# Whether or not to show any messages (in chat) 
+#show_messages: true
+
+# Whether or not to show messages on every spell cast (in chat)
+#show_cast_messages: false
+
+# Enable/Disable Sound Effects
+#sounds: true
+
+# Prevent rapid sending of chat messages from the plugin (in milliseconds)
+#message_throttle: 3000
+
+# Set this to 1 to just turn costs off, or you can use it to scale costs down.
+#cost_reduction: 0.0
+
+# How much to reduce costs and cooldowns when using /cast (versus a wand)
+#cast_command_cost_reduction: 1.0
+#cast_command_cooldown_reduction: 0.0
+
+# Whether wands can be crafted on a crafting table
+enable_crafting: false
+
+# Whether wands can be combined on an anvil
+#enable_combining: true
+
+# Whether wands can be upgraded on an enchanting table
+enable_enchanting: false
+
+indestructible_wands: false
+
+# Whether or not to add random wands to naturally spawned chests
+enable_block_populator: true
+
+# Whether or not using a wand on an anvil will organize its inventory
+#enable_organizing: true
+
+# Represents erase (fill with air)
+erase_item: book_and_quill
+# Represents copy (fill with the target material)
+copy_item: book
+# Clone will copy the area you are standing in when the clone material is activated
+clone_item: bookshelf

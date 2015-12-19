@@ -1,0 +1,83 @@
+GlowWormDrops:
+  Drops:
+  - 348:0 1-5 1
+  - 341:0 1 0.2
+  - 351:4 1-5 1
+  - 373:16454 1-3 1
+  - 384:0 1-12 1
+MerchantDrops:
+  Drops:
+  - 373:16389 1-2 0.5
+  - 373:16456 1 0.1
+  - 322:0 1 0.3
+  - 371:0 1-5 0.1
+  - 388:0 2-5 1
+  - 384:0 1-3 1
+  - 298:0 1 0.1
+ArcherMerchantDrops:
+  Drops:
+  - MerchantBow 1 0.07
+  - 373:16389 1-2 0.5
+  - 373:16456 1 0.1
+  - 322:0 1 0.3
+  - 371:0 1-5 0.1
+  - 388:0 2-5 1
+  - 384:0 1-3 1
+  - 298:0 1 0.1
+BattleMerchantDrops:
+  Drops:
+  - MerchantSword 1 0.1
+  - MerchantBow 1 0.02
+  - 373:16389 1-2 0.5
+  - 373:16456 1 0.1
+  - 322:0 1 0.3
+  - 371:0 1-5 0.1
+  - 388:0 4-8 1
+  - 384:0 1-6 1
+  - 298:0 1 0.1
+  - 299:0 1 0.1
+  - 300:0 1 0.1
+  - 301:0 1 0.1
+RichMerchantDrops:
+  Drops:
+  - MerchantSword 1 0.05
+  - MerchantBow 1 0.02
+  - 373:16389 1-2 0.5
+  - 373:16456 1 0.1
+  - 322:0 1 0.3
+  - 371:0 1-5 0.1
+  - 388:0 10-15 1
+  - 384:0 1-3 1
+  - 314:0 1 0.1
+  - 315:0 1 0.1
+  - 316:0 1 0.1
+  - 317:0 1 0.1
+ThornedDrops:
+  Drops:
+  - ThornedHelmet 1 0.05
+  - ThornedChestplate 1 0.02
+  - 373:16389 1-2 0.3
+  - 371:0 1-2 0.05
+  - 388:0 1-3 1
+  - 384:0 1-7 1
+ThornedTankDrops:
+  Drops:
+  - ThornedLeggings 1 0.02
+  - ThornedBoots 1 0.05
+  - ThornedHelmet 1 0.05
+  - ThornedChestplate 1 0.02
+  - 373:16389 1-2 0.3
+  - 371:0 1-2 0.05
+  - 388:0 1-3 1
+  - 384:0 1-7 1
+BloatedDrops:
+  Drops:
+  - 341:0 1 0.3
+  - 371:0 1-2 0.05
+  - 388:0 1-3 1
+  - 384:0 1-5 1
+SkeletonKingDrops:
+  Drops:
+  - KingsCrown 0.01
+  - 371:0 32-64 1
+  - exp 100 1

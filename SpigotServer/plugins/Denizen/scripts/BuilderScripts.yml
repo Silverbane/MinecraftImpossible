@@ -1,0 +1,26 @@
+FlagRepairComplete:
+  Type: Task
+  Script:
+    - execute as_server "vt run Flag:RepairComplete <npc.owner.name>"
+    - execute as_npc "npc select <npc.id>"
+    - execute as_npc "npc remove"
+BuildCancel:
+  Type: Task
+  Script:
+#    - execute as_server "broadcast LOG <npc.owner.name> setbool <npc.location.world.name> <npc.name.nickname>Building False"
+    - execute as_server "vt setbool <npc.location.world.name> <npc.name.nickname>Building False"
+    - execute as_server "vt run Shared:BuildCancel <npc.owner.name>"
+    - execute as_npc "npc select <npc.id>"
+    - execute as_npc "npc remove"
+BuildComplete:
+  Type: Task
+  Script:
+#    - execute as_server "broadcast LOG <npc.owner.name> setbool <npc.location.world.name> <npc.name.nickname>Building False"
+    - execute as_server "vt setbool <npc.location.world.name> <npc.name.nickname>Building False"
+    - execute as_server "vt run Shared:BuildComplete <npc.owner.name>"
+    - execute as_npc "npc select <npc.id>"
+    - execute as_npc "npc remove"
+BuildStart:
+  Type: Task
+  Script:
+    - execute as_server "vt setstr <npc.owner.name> DemoBuilderID <npc.id>"

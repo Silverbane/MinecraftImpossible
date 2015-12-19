@@ -1,0 +1,16 @@
+Debug: false
+Furnace_Amount: -1
+Prevent_Wasted_Flint_and_Steel: true
+update-check:
+  enabled: true
+  frequency: 6
+Use_Stack_Amounts_In_Furnace: true
+Use_Stack_Amounts_In_Trading: true
+Use_Stack_Amounts_In_Crafting: true
+Use_Stack_Amounts_In_Brewing: true
+Use_Stack_Amounts_In_Anvil: true
+Use_Stack_Amounts_In_Beacon: true
+Use_Stack_Amounts_In_EnderChest: true
+Use_Stack_Amounts_In_Hopper: true
+Use_Stack_Amounts_In_Dropper: true
+Use_Stack_Amounts_In_Dispenser: true

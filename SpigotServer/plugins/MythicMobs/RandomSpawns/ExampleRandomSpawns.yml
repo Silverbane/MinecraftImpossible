@@ -1,0 +1,54 @@
+# 
+# These example files show you how to inject Mythic Mobs
+# you've created into your world. The name of each block
+# can be whatever you'd like but must be unique.
+RandomSkeletonMerchant:
+  MobType: SkeletonMerchant
+  Worlds: HardWorld
+  Chance: 0.02
+  Priority: 1
+  Action: add
+#  Conditions:
+#  - outside true
+RandomZombieMerchant:
+  MobType: ZombieMerchant
+  Worlds: HardWorld
+  Chance: 0.02
+  Priority: 1
+  Action: add
+RandomZombieBattleMerchant:
+  MobType: ZombieBattleMerchant
+  Worlds: HardWorld
+  Chance: 0.01
+  Priority: 2
+  Action: add
+RandomZombieRichMerchant:
+  MobType: ZombieRichMerchant
+  Worlds: HardWorld
+  Chance: 0.01
+  Priority: 3
+  Action: add
+RandomThornedZombie:
+  MobType: ThornedZombie
+  Worlds: HardWorld
+  Chance: 0.01
+  Priority: 4
+  Action: add
+RandomBloatedZombie:
+  MobType: BloatedZombie
+  Worlds: HardWorld
+  Chance: 0.01
+  Priority: 5
+  Action: add
+RandomThornedZombieTank:
+  MobType: ThornedZombieTank
+  Worlds: HardWorld
+  Chance: 0.003
+  Priority: 6
+  Action: add
+RandomGlowWorm:
+  MobType: GlowWorm
+  Worlds: HardWorld
+  Chance: 0.005
+  Priority: 7
+  Action: add
