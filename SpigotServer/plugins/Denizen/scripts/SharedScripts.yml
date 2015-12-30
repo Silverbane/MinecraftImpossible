@@ -48,14 +48,6 @@ Sentry:
       - run script:Heal as:<npc> delay:8
       - run script:Heal as:<npc> delay:12
       - run script:HealLoop as:<npc> delay:16
-      } else if <player.item_in_hand.id> == 424 {
-      - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
-      - take 424 qty:1
-      - flag npc healloop:1
-      - run script:Heal as:<npc> delay:4
-      - run script:Heal as:<npc> delay:8
-      - run script:Heal as:<npc> delay:12
-      - run script:HealLoop as:<npc> delay:16
       } else if <player.item_in_hand.id> == 364 {
       - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
       - take 364 qty:1
@@ -88,14 +80,6 @@ Sentry:
       - run script:Heal as:<npc> delay:8
       - run script:Heal as:<npc> delay:12
       - run script:HealLoop as:<npc> delay:16
-      } else if <player.item_in_hand.id> == 412 {
-      - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
-      - take 412 qty:1
-      - flag npc healloop:75
-      - run script:Heal as:<npc> delay:4
-      - run script:Heal as:<npc> delay:8
-      - run script:Heal as:<npc> delay:12
-      - run script:HealLoop as:<npc> delay:16
       } else if <player.item_in_hand.id> == 297 {
       - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
       - take 297 qty:1
@@ -113,14 +97,6 @@ Sentry:
       } else if <player.item_in_hand.id> == 282 {
       - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
       - take 282 qty:1
-      - flag npc healloop:1
-      - run script:Heal as:<npc> delay:2
-      - run script:Heal as:<npc> delay:4
-      - run script:Heal as:<npc> delay:6
-      - run script:HealLoop as:<npc> delay:8
-      } else if <player.item_in_hand.id> == 413 {
-      - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
-      - take 413 qty:1
       - flag npc healloop:1
       - run script:Heal as:<npc> delay:2
       - run script:Heal as:<npc> delay:4
@@ -168,28 +144,6 @@ Sentry:
       - run script:Heal as:<npc> delay:20
       - run script:Heal as:<npc> delay:24
       - run script:HealLoop as:<npc> delay:25
-      } else if <player.item_in_hand.id> == 396 {
-      - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
-      - take 396 qty:1
-      - flag npc healloop:100
-      - run script:Heal as:<npc> delay:2
-      - run script:Heal as:<npc> delay:4
-      - run script:Heal as:<npc> delay:6
-      - run script:Heal as:<npc> delay:8
-      - run script:Heal as:<npc> delay:10
-      - run script:Heal as:<npc> delay:12
-      - run script:HealLoop as:<npc> delay:14
-      } else if <player.item_in_hand.id> == 322 {
-      - chat 'Yummy! Thank you <player.name> for the <player.item_in_hand.material.name>!'
-      - take 322 qty:1
-      - flag npc healloop:1
-      - run script:Heal as:<npc> delay:2
-      - run script:Heal as:<npc> delay:4
-      - run script:Heal as:<npc> delay:6
-      - run script:Heal as:<npc> delay:8
-      - run script:Heal as:<npc> delay:10
-      - run script:Heal as:<npc> delay:12
-      - run script:HealLoop as:<npc> delay:14
       } else {
       - chat "If you do not have any food for me go away!"
           }
