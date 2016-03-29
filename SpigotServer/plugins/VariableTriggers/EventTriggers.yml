@@ -78,6 +78,8 @@ HardWorld:
     - '@ENDIF'
     - '@PLAYER Do you like this plugin and server. Help us stay online and continue
       developing by donating through paypal at http://paypal.me/NathanSteen'
+    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
+    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
   Respawn:
     CoolDown: 0
     Script:
@@ -90,28 +92,28 @@ HardWorld:
     - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
     - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
     - ' @SUBINT $HardWorld.<playername>Score 5'
-    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
-      Monsters for 15 seconds in a 45 meter radius!'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
     - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
-    - ' @LOOP 3'
-    - '   @PAUSE 5'
-    - '   @CMDOP killall monsters 45'
-    - '   @SOUNDEX ENDERMAN_TELEPORT 1.0 1.0 <currentloc:<playername>>'
-    - ' @ENDLOOP'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
     - '@ELSE'
     - ' @CMDOP scoreboard players remove <playername> SHard 1'
     - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 1'
     - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 1'
     - ' @SUBINT $HardWorld.<playername>Score 1'
-    - ' @PLAYER You have lost 1 point for team <var:$<playername>.SMTeam>! Nuking
-      Monsters for 10 seconds in a 25 meter radius!'
+    - ' @PLAYER You have lost 1 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
     - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
-    - ' @LOOP 2'
-    - '   @PAUSE 5'
-    - '   @CMDOP killall monsters 25'
-    - '   @SOUNDEX ENDERMAN_TELEPORT 1.0 1.0 <currentloc:<playername>>'
-    - ' @ENDLOOP'
-    - ' @PLAYER Note during the 5 minute death penality timer you only lose 1 point
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
+    - ' @PLAYER Note during the 5 minute death penalty timer you only lose 1 point
       for every death.'
     - '@ENDIF'
   BlockBreak:
@@ -176,6 +178,8 @@ HardWorld_nether:
     - '@ENDIF'
     - '@PLAYER Do you like this plugin and server. Help us stay online and continue
       developing by donating through paypal at http://paypal.me/NathanSteen'
+    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
+    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
   Respawn:
     CoolDown: 0
     Script:
@@ -188,18 +192,30 @@ HardWorld_nether:
     - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
     - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
     - ' @SUBINT $HardWorld.<playername>Score 5'
-    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
-      Monsters!'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
     - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
-    - ' @CMDOP killall monsters 150'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
     - '@ELSE'
-    - ' @PLAYER You did not lose any points due to death penalty timer.'
+    - ' @CMDOP scoreboard players remove <playername> SHard 1'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 1'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 1'
+    - ' @SUBINT $HardWorld.<playername>Score 1'
+    - ' @PLAYER You have lost 1 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
+    - ' @PLAYER Note during the 5 minute death penalty timer you only lose 1 point
+      for every death.'
     - '@ENDIF'
-    - '@SETBOOL $HardWorld.<playername>FlagTpAvail True'
-    - '@PLAYER You have 30 seconds to use command /wp flag to warp to your teams flags
-      spawnpoint.'
-    - '@PAUSE 30'
-    - '@SETBOOL $HardWorld.<playername>FlagTpAvail False'
   BlockBreak:
     CoolDown: 0
     Script:
@@ -262,6 +278,8 @@ HardWorld_the_end:
     - '@ENDIF'
     - '@PLAYER Do you like this plugin and server. Help us stay online and continue
       developing by donating through paypal at http://paypal.me/NathanSteen'
+    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
+    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
   Respawn:
     CoolDown: 0
     Script:
@@ -274,18 +292,30 @@ HardWorld_the_end:
     - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 5'
     - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
     - ' @SUBINT $HardWorld.<playername>Score 5'
-    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! Nuking
-      Monsters!'
+    - ' @PLAYER You have lost 5 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
     - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
-    - ' @CMDOP killall monsters 150'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
     - '@ELSE'
-    - ' @PLAYER You did not lose any points due to death penalty timer.'
+    - ' @CMDOP scoreboard players remove <playername> SHard 1'
+    - ' @CMDOP scoreboard players remove <var:$<playername>.SMTeam>Total SHard 1'
+    - ' @SUBINT $HardWorld.<var:$<playername>.SMTeam>Score 1'
+    - ' @SUBINT $HardWorld.<playername>Score 1'
+    - ' @PLAYER You have lost 1 points for team <var:$<playername>.SMTeam>! A globe of monster protection surrounds your territory for 15 seconds.'
+    - ' @SETINT $<playername>.SMRepawnTime <secondticks:300>'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection!",color:red}'    
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] subtitle {text:"<var:$<playername>.SMTeam> Territory Mob Protection Activated For 15 Seconds",color:yellow}'    
+    - ' @CMDCON wge add HardWorld <var:$<playername>.SMTeam>'
+    - ' @PAUSE 15'
+    - ' @CMDCON title @a[team=<var:$<playername>.SMTeam>] title {text:"Protection Fades!",color:red}'
+    - ' @CMDCON wge remove HardWorld <var:$<playername>.SMTeam>'
+    - ' @PLAYER Note during the 5 minute death penalty timer you only lose 1 point
+      for every death.'
     - '@ENDIF'
-    - '@SETBOOL $HardWorld.<playername>FlagTpAvail True'
-    - '@PLAYER You have 30 seconds to use command /wp flag to warp to your teams flags
-      spawnpoint.'
-    - '@PAUSE 30'
-    - '@SETBOOL $HardWorld.<playername>FlagTpAvail False'
   BlockBreak:
     CoolDown: 0
     Script:
@@ -296,6 +326,6 @@ HardWorld_the_end:
     - ' @SETINT $<playername>.RandomNumberTemp <random1to:50>'
     - ' @IF i $<playername>.RandomNumberTemp = 7'
     - '   @DROPITEM Emerald 1 NONE <triggerloc>'
-    - '   @PLAYER You find something shiney in the gravel'
+    - '   @PLAYER You find something shiny in the gravel'
     - ' @ENDIF'
     - '@ENDIF'

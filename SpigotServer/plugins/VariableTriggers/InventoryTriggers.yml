@@ -145,6 +145,7 @@ Menu:
   around the player., slot: 8'
 - 'item: redstone_block, meta: 0, amount: 1, name: ACTIVATE BUILDING, lore: Activates
   a buildings menu., slot: 9'
+- 'item: jack_o_lantern, meta: 0, amount: 1, name: KILL BOSS MOBS, lore: Kills all boss % mobs in the world % Can only be activated once % every 24 hours per team, slot: 16'
 - 'item: book, meta: 0, amount: 1, name: PATCH NOTES, slot: 17'
 Setup:
 - 'cancelled: true'
