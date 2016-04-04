@@ -1533,42 +1533,42 @@ Scripts:
     - '@ENDIF'
   AddPoints:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard $HardWorld.<playername>PointsSelected'
+    - '@CMDCON scoreboard players add <playername> LHard $HardWorld.<playername>PointsSelected'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard $HardWorld.<playername>PointsSelected'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score $HardWorld.<playername>PointsSelected'
     - '@ADDINT $HardWorld.<playername>Score $HardWorld.<playername>PointsSelected'
     - '@CALL Flag:VictoryCondition'
   AddPoints1:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard 1'
+    - '@CMDCON scoreboard players add <playername> LHard 1'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard 1'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score 1'
     - '@ADDINT $HardWorld.<playername>Score 1'
     - '@CALL Flag:VictoryCondition'
   AddPoints2:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard 2'
+    - '@CMDCON scoreboard players add <playername> LHard 2'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard 2'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score 2'
     - '@ADDINT $HardWorld.<playername>Score 2'
     - '@CALL Flag:VictoryCondition'
   AddPoints3:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard 3'
+    - '@CMDCON scoreboard players add <playername> LHard 3'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard 3'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score 3'
     - '@ADDINT $HardWorld.<playername>Score 3'
     - '@CALL Flag:VictoryCondition'
   AddPoints4:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard 4'
+    - '@CMDCON scoreboard players add <playername> LHard 4'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard 4'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score 4'
     - '@ADDINT $HardWorld.<playername>Score 4'
     - '@CALL Flag:VictoryCondition'
   AddPoints5:
     Script:
-    - '@CMDCON scoreboard players add <playername> SHard 5'
+    - '@CMDCON scoreboard players add <playername> LHard 5'
     - '@CMDCON scoreboard players add <var:$<playername>.SMTeam>Total SHard 5'
     - '@ADDINT $HardWorld.<var:$<playername>.SMTeam>Score 5'
     - '@ADDINT $HardWorld.<playername>Score 5'
