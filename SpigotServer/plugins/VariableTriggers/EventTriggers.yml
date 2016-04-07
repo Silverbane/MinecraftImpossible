@@ -43,6 +43,7 @@ HardWorld:
     - '@CALL Menu:PatchNotes'
     - '@CALL Menu:BuilderControl'
     - '@CALL Flag:IEvent'
+    - '@CALL Shared:WoodConversion'
     - '@CALL Shared:EndIEvent'
   PlayerDeath:
     CoolDown: 0

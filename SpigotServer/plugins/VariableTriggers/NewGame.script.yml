@@ -191,6 +191,7 @@ Scripts:
     - ' @CMDCON scoreboard objectives setdisplay list LHard'
     - ' @CALL Flag:Setup'
     - ' @SETSTR $Config.CurrencyType Emerald'
+    - ' @CALL NewGame:ITEMID'
     - ' @ADDLIST @HardWorld.TeamList Purple'
     - ' @ADDLIST @HardWorld.TeamList Green'
     - ' @ADDLIST @HardWorld.TeamList Red'
@@ -634,3 +635,11 @@ Scripts:
     - '@SETBLOCK $SSCGMMasterStartGame.BlockID $SSCGMMasterStartGame.BlockLoc'
     - '@SETSTR $SSCGMMasterDrop.Set False'
     - '@SETBLOCK $SSCGMMasterDrop.BlockID $SSCGMMasterDrop.BlockLoc'
+  ITEMID:
+    Script:
+    - '@SETSTR $ITEMID.OakWood 17:0'
+    - '@SETSTR $ITEMID.SpruceWood 17:1'
+    - '@SETSTR $ITEMID.BirchWood 17:2'
+    - '@SETSTR $ITEMID.JungleWood 17:3'
+    - '@SETSTR $ITEMID.AcaciaWood 162:0'
+    - '@SETSTR $ITEMID.DarkOakWood 162:1'
