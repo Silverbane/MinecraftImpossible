@@ -14,7 +14,7 @@ GlowWorm:
   - GlowWormDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.7
+    MovementSpeed: 0.3
     MaxCombatDistance: 25
     PreventOtherDrops: false
 ThornedZombie:
@@ -146,7 +146,7 @@ SkeletonMerchant:
   Damage: 6
   Skills:
   - skill{s=MerchantPull} @Target <20 0.05
-  - skill{s=UseBow} @Target >10 0.75
+#  - skill{s=UseBow} @Target >10 0.75
   - skill{s=Points2} @Trigger ~onDeath 1
   Equipment:
   - MerchantBow:0

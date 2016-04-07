@@ -8,7 +8,8 @@ RandomSkeletonMerchant:
   Chance: 0.02
   Priority: 1
   Action: add
-#  Conditions:
+  Conditions:
+  - worldtime 13801-22200
 #  - outside true
 RandomZombieMerchant:
   MobType: ZombieMerchant
@@ -16,39 +17,55 @@ RandomZombieMerchant:
   Chance: 0.02
   Priority: 1
   Action: add
+  Conditions:
+  - worldtime 13801-22200
 RandomZombieBattleMerchant:
   MobType: ZombieBattleMerchant
   Worlds: HardWorld
   Chance: 0.01
   Priority: 2
   Action: add
+  Conditions:
+  - worldtime 13801-22200
 RandomZombieRichMerchant:
   MobType: ZombieRichMerchant
   Worlds: HardWorld
   Chance: 0.01
   Priority: 3
   Action: add
+  Conditions:
+  - worldtime 13801-22200
 RandomThornedZombie:
   MobType: ThornedZombie
   Worlds: HardWorld
   Chance: 0.01
   Priority: 4
   Action: add
+  Conditions:
+  - worldtime 13801-22200
 RandomBloatedZombie:
   MobType: BloatedZombie
   Worlds: HardWorld
   Chance: 0.01
   Priority: 5
   Action: add
+  Conditions:
+  - worldtime 13801-22200
 RandomThornedZombieTank:
   MobType: ThornedZombieTank
   Worlds: HardWorld
-  Chance: 0.003
+  Chance: 0.01
   Priority: 6
   Action: add
+  Conditions:
+  - worldtime 13801-22200
+  - thundering true
 RandomGlowWorm:
   MobType: GlowWorm
   Worlds: HardWorld
-  Chance: 0.005
+  Chance: 0.01
   Priority: 7
   Action: add
+  Conditions:
+  - worldtime 13801-22200
+  - heightbelow 30
