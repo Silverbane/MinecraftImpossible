@@ -9,6 +9,7 @@ GlowWorm:
   - skill{s=ConsumeSilverfish} @Self <30 0.1
   - skill{s=SkullSuck} @Target >0 0.5
   - skill{s=Points5} @Trigger ~onDeath 1
+  - potion{type=GLOWING;duration=250;level=4} @Self ~onTimer:300 1
   Equipment:
   Drops:
   - GlowWormDrops
@@ -159,5 +160,104 @@ SkeletonMerchant:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+CrazyHillary:
+  Type: WITCH
+  Display: '&6Crazy Hillary'
+  Health: 60
+  Damage: 6
+  Skills:
+  - skill{s=SummonMonica} @Trigger ~onDamaged >50 1
+  - skill{s=RandomVotePotion} @Trigger ~onAttack >50 0.5
+  - skill{s=ConsumeWorms} @Self <30 0.1
+  - skill{s=SkullMount} @Target >0 0.5
+  - skill{s=Points5} @Trigger ~onDeath 1
+  Equipment:
+  Drops:
+  - GlowWormDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+Monica:
+  Type: WITCH
+  Display: '&6Monica'
+  Health: 10
+  Damage: 6
+  Skills:
+  - skill{s=SummonWorms} @Self ~onDamaged 0.3
+  - skill{s=SpreadFireSelf} @Self ~onSpawn
+  - skill{s=SkullMount} @NearestPlayer ~onDamaged 0.5
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.2
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+MeteorCreeper:
+  Type: CREEPER
+  Display: '&6Meteor Creeper'
+  Health: 30
+  Damage: 0
+  DamageModifiers:
+  - FALL 0
+  Skills:
+  - skill{s=JumpToMoon} @Self ~onTimer:100 0.5
+  - skill{s=MeteorShower} @Self ~onExplode
+  - skill{s=MeteorShower} @Self ~onDeath
+  - skill{s=Points5} @Trigger ~onDeath 1
+  - skill{s=Points5} @Trigger ~onDeath 1
+  Equipment:
+  Drops:
+  - GlowWormDrops
+  Options:
+    AlwaysShowName: true
+    MovementSpeed: 0.3
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+MeteorPointer:
+  Type: bat
+  Display: ''
+  Health: 1000
+  Damage: 0
+  DamageModifiers:
+  - ENTITY_ATTACK 0
+  - PROJECTILE 0
+  - FIRE 0
+  - FIRE_TICK 0
+  - LAVA 0
+  - FALL 0
+  - SUFFOCATION 0
+  - MAGIC 0
+  - CUSTOM 0
+  - CONTACT 0
+  - ENTITY_EXPLOSION 0
+  - BLOCK_EXPLOSION 0
+  Skills:
+  - skill{s=MeteorPointerSpawn} @Self ~onSpawn
+  - skill{s=MeteorPointerFinish} @Self ~onTimer:5 0.07
+  Options:
+    PreventOtherDrops: true
+    KnockbackResistance: 1
+    Silent: true
+ChargedCreeper:
+  Type: CREEPER
+  Display: '&6Charged Creeper'
+  Health: 20
+  Damage: 97
+  DamageModifiers:
+  - FALL 0
+  Skills:
+  - skill{s=JumpToMoon} @Self ~onTimer:100 0.1
+  - skill{s=MeteorShower} @Self ~onExplode 0.02
+  - skill{s=Points1} @Trigger ~onDeath 1
+  Equipment:
+  Drops:
+  - 331:0 1-3 0.2
+  Options:
+    SuperCharged: true
+    AlwaysShowName: true
+    MovementSpeed: 0.3
     MaxCombatDistance: 25
     PreventOtherDrops: false

@@ -49,6 +49,24 @@ SkullSuck:
   - heal{a=5;overheal=true} @Self
   - damage{a=2;i=true} @Trigger >0 1
   - dismount @Self
+SkullMount:
+  Cooldown: 20
+  Conditions:
+  - targetwithin 2
+  Skills:
+  - message{msg="$boss; &4You are mine NOW!"} @PlayersInRadius{r=30} 1
+  - mounttarget @Target 1
+  - rally{r=15;types=silverfish} @Self 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - delay 40
+  - heal{a=5;overheal=true} @Self
+  - damage{a=2;i=true} @Trigger >0 1
+  - dismount @Self
 Thorns:
   Cooldown: 2
   Conditions:
@@ -63,6 +81,18 @@ SummonSilverfish:
   - message{msg="$boss; &4Blurg, my insides are falling out!"} @PlayersInRadius{r=30} 1
   - delay 20
   - summon{type=silverfish;a=2;r=5} @Self
+SummonWorms:
+  Cooldown: 20
+  Skills:
+  - message{msg="$boss; &4Oh my little baby worms that Bill and I made together are fleeing me!"} @PlayersInRadius{r=30} 1
+  - delay 20
+  - summon{type=silverfish;a=2;r=5} @Self
+  - summon{type=glowworm;a=2;r=5} @Self 0.2
+ConsumeWorms:
+  Cooldown: 20
+  Skills:
+  - message{msg="$boss; &4I cannot believe she gave me worms!"} @PlayersInRadius{r=30} 1
+  - consume{d=10;h=10} @MobsInRadius{r=30;types=silverfish} >0 1
 ConsumeSilverfish:
   Cooldown: 20
   Skills:
@@ -71,9 +101,77 @@ ConsumeSilverfish:
 SummonBabyVillager:
   Cooldown: 15
   Skills:
-  - message{msg="$boss; &4Help me! He ate me last friday! I am finnaly free!"} @PlayersInRadius{r=30} 1
+  - message{msg="$boss; &4He ate me but you freed me, now I am your servant!"} @PlayersInRadius{r=30} 1
   - summon{type=villager;a=1;r=2} @Self
 UseBow:
   Cooldown: 3
   Skills:
   - shoot{t=arrow;d=4;md=40;v=10} @Target >10 1
+RandomVotePotion:
+  Cooldown: 3
+  Skills:
+  - message{msg="$boss; &4Vote For Me!"} @PlayersInRadius{r=30} 1
+  - potion{type=POISON;duration=150;level=2} @Target
+SummonMonica:
+  Cooldown: 5000
+  Skills:
+  - message{msg="$boss; &4She gave me worms! Now she dies..."} @PlayersInRadius{r=30} 1
+  - delay 20
+  - summon{type=silverfish;a=2;r=5} @Self
+  - summon{type=Monica;a=1;r=2} @Trigger
+SpreadFireSelf:
+  Cooldown: 1
+  Skills:
+  - message{msg="$boss; &4Ahh! That crazy witch lit me on fire... Save me Bill!"} @PlayersInRadius{r=30} 1
+  - ignite{ticks=30} @Self
+  - explosion{blockdamage=false;fire=true;yield=3} @Origin
+  - delay 30
+  - ignite{ticks=30} @Self
+  - explosion{blockdamage=false;fire=true;yield=3} @Origin
+  - delay 30
+  - ignite{ticks=30} @Self
+  - explosion{blockdamage=false;fire=true;yield=3} @Origin  
+  - delay 30
+  - ignite{ticks=30} @Self
+  - explosion{blockdamage=false;fire=true;yield=3} @Origin
+  - damage{amount=10;ignoreArmor=true} @Self
+JumpToMoon:
+  Cooldown: 10
+  Skills:
+  - effect:particles{p=flame;a=30;vS=1.5;hS=1.5} @Origin
+  - effect:particles{p=largesmoke;a=15;vS=1;hS=1} @Origin
+  - effect:particles{p=largeexplosion;a=3;vS=0.75;hS=0.75} @Origin
+  - leap{velocity=400} @target
+CrushingLeap:
+  Cooldown: 10
+  Skills:
+  - leap{velocity=200} @target
+  - delay 20
+  - jump{velocity=-100}
+  - effect:explosion @self
+  - damage{amount=20} @EntitiesInRadius{r=5}
+# Meteor Shower Created by Roboboy64
+MeteorShower:
+  Cooldown: 10
+  Skills:
+  - summon{m=MeteorPointer;a=15;r=30}
+MeteorPointerSpawn:
+  Skills:
+  - potion{type=INVISIBILITY;d=2000;l=1} @self
+  - delay 200
+  - skill{s=MeteorPointerFinish}
+MeteorPointerFinish:
+  Cooldown: 100
+  Skills:
+  - projectile{onTick=MeteorTick;onEnd=MeteorEnd;v=30;i=1;hR=2;vR=2;syo=75;sfo=20;mr=1000;d=500;sE=false} @Self
+  - delay 500
+  - remove{m=MeteorPointer} @Self
+MeteorTick:
+  Skills:
+  - effect:particles{p=flame;a=30;vS=1.5;hS=1.5} @Origin
+  - effect:particles{p=largesmoke;a=15;vS=1;hS=1} @Origin
+  - effect:particles{p=largeexplosion;a=3;vS=0.75;hS=0.75} @Origin
+MeteorEnd:
+  Skills:
+  - explosion{blockdamage=true;fire=true;yield=3} @Origin
+  - remove{m=MeteorPointer} @Self

@@ -259,7 +259,7 @@ ExtraHardMode:
     Bonus Underground Spawn Percent: 20
     Drop Web On Death: true
   Creepers:
-    Charged Creeper Spawn Percent: 10
+    Charged Creeper Spawn Percent: 0
     Drop Tnt On Death:
       Percent: 3
       Max Y: 250
@@ -374,7 +374,7 @@ ExtraHardMode:
         # Disabling worlddamage allows you to have explosions that damage players above ground, but doesn't make a mess.
         World Damage: true
     Charged Creeper:
-      Enable Custom Explosion: true
+      Enable Custom Explosion: false
       Below Border:
         Explosion Power: 6
         Set Fire: false
@@ -389,7 +389,7 @@ ExtraHardMode:
       # Makes for more natural looking craters.
       Enable Multiple Explosions: false
       # Change recipe to yield 3 tnt instead of 1
-      Tnt Per Recipe: 1
+      Tnt Per Recipe: 3
       Below Border:
         Explosion Power: 6
         Set Fire: false

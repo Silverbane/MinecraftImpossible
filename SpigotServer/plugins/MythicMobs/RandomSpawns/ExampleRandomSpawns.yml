@@ -5,17 +5,16 @@
 RandomSkeletonMerchant:
   MobType: SkeletonMerchant
   Worlds: HardWorld
-  Chance: 0.02
-  Priority: 1
+  Chance: 0.03
+  Priority: 95
   Action: add
   Conditions:
   - worldtime 13801-22200
-#  - outside true
 RandomZombieMerchant:
   MobType: ZombieMerchant
   Worlds: HardWorld
-  Chance: 0.02
-  Priority: 1
+  Chance: 0.04
+  Priority: 100
   Action: add
   Conditions:
   - worldtime 13801-22200
@@ -23,7 +22,7 @@ RandomZombieBattleMerchant:
   MobType: ZombieBattleMerchant
   Worlds: HardWorld
   Chance: 0.01
-  Priority: 2
+  Priority: 90
   Action: add
   Conditions:
   - worldtime 13801-22200
@@ -31,7 +30,7 @@ RandomZombieRichMerchant:
   MobType: ZombieRichMerchant
   Worlds: HardWorld
   Chance: 0.01
-  Priority: 3
+  Priority: 85
   Action: add
   Conditions:
   - worldtime 13801-22200
@@ -39,23 +38,31 @@ RandomThornedZombie:
   MobType: ThornedZombie
   Worlds: HardWorld
   Chance: 0.01
-  Priority: 4
+  Priority: 75
   Action: add
   Conditions:
   - worldtime 13801-22200
 RandomBloatedZombie:
   MobType: BloatedZombie
   Worlds: HardWorld
-  Chance: 0.01
-  Priority: 5
+  Chance: 0.02
+  Priority: 80
+  Action: add
+  Conditions:
+  - worldtime 13801-22200
+RandomCrazyHillary:
+  MobType: CrazyHillary
+  Worlds: HardWorld
+  Chance: 0.02
+  Priority: 78
   Action: add
   Conditions:
   - worldtime 13801-22200
 RandomThornedZombieTank:
   MobType: ThornedZombieTank
   Worlds: HardWorld
-  Chance: 0.01
-  Priority: 6
+  Chance: 0.03
+  Priority: 103
   Action: add
   Conditions:
   - worldtime 13801-22200
@@ -63,9 +70,26 @@ RandomThornedZombieTank:
 RandomGlowWorm:
   MobType: GlowWorm
   Worlds: HardWorld
-  Chance: 0.01
-  Priority: 7
+  Chance: 0.1
+  Priority: 105
   Action: add
   Conditions:
   - worldtime 13801-22200
   - heightbelow 30
+RandomChargedCreeper:
+  MobType: ChargedCreeper
+  Worlds: HardWorld
+  Chance: 0.01
+  Priority: 87
+  Action: add
+  Conditions:
+  - worldtime 13801-22200
+RandomMeteorCreeper:
+  MobType: MeteorCreeper
+  Worlds: HardWorld
+  Chance: 0.03
+  Priority: 110
+  Action: add
+  Conditions:
+  - worldtime 13801-22200
+  - lunarphase 4
