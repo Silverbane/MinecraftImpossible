@@ -171,9 +171,16 @@ SetupTeamSelect:
 - 'item: wool, meta: 4, amount: 1, name: Join Yellow , lore: , slot: 7'
 - 'item: wool, meta: 7, amount: 1, name: Join Gray , lore: , slot: 8'
 - 'item: wool, meta: 0, amount: 1, name: Join White , lore: , slot: 9'
+- 'item: wool, meta: 11, amount: 1, name: Join Dark_Blue , lore: , slot: 10'
+- 'item: wool, meta: 13, amount: 1, name: Join Dark_Green , lore: , slot: 11'
+- 'item: wool, meta: 9, amount: 1, name: Join Dark_Aqua , lore: , slot: 12'
+- 'item: wool, meta: 14, amount: 1, name: Join Dark_Red , lore: , slot: 13'
+- 'item: wool, meta: 4, amount: 1, name: Join Gold , lore: , slot: 14'
+- 'item: wool, meta: 7, amount: 1, name: Join Dark_Gray , lore: , slot: 15'
+- 'item: wool, meta: 9, amount: 1, name: Join Aqua , lore: , slot: 16'
 - 'item: torch, meta: 0, amount: 1, name: START GAME or SUBMIT, lore: Spawn into an
   ongoing or % new Minecraft Impossible Game % AFTER selecting your team colour, slot:
-  10'
+  17'
 GameProperties:
 - 'cancelled: true'
 - 'title: GameProperties'

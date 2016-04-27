@@ -1082,6 +1082,20 @@ Scripts:
     - '@CALL Shared:FlagDistanceCheck2'
     - '@SETSTR $<worldname>.<playername>FlagCheckColor White'
     - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Dark_Blue'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Dark_Green'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Dark_Aqua'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Dark_Red'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Gold'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Dark_Gray'
+    - '@CALL Shared:FlagDistanceCheck2'
+    - '@SETSTR $<worldname>.<playername>FlagCheckColor Aqua'
+    - '@CALL Shared:FlagDistanceCheck2'
   FlagDistanceCheck2:
     Script:
 # A check for placing any building to prevent people building them over enemy defences.

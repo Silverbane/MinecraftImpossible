@@ -11,23 +11,6 @@ Scripts:
     - '@ADDINT $<worldname>.<var:$<playername>.SMTeam>PopLimit 0'
     - '@PLAYER &8LOG Calling Shared:BuildingLedger'
     - '@CALL Shared:BuildingLedger'
-  Menu:
-    Script:
-    - '@SETSTR $<worldname>.<playername>CheckType Y-1Check'
-    - '@CALL Shared:BuildingID'
-    - '@IF b $<worldname>.<playername>NoOwner = True'
-    - '@AND b $<worldname>.<var:$<playername>.SMTeam>Building != True'
-#    - ' @SETBOOL $<worldname>.<var:$<playername>.SMTeam>Building False' 
-#    - ' @SETSTR $<worldname>.<playername>ActivePlans Fletcher'
-    - ' @SETSTR $<worldname>.<playername>CurrentTown $<playername>.SMTeam'
-    - ' @SETSTR $<worldname>.<var:$<playername>.SMTeam>FletcherID $<worldname>.<playername>BuildingID'
-    - ' @ADDINT $<worldname>.<var:$<playername>.SMTeam>PopLimit 0'
-    - ' @CALL Shared:BuildingLedger'
-    - '@ENDIF'
-    - '@IF b $<worldname>.<playername>AllowedUse = True'
-    - ' @PLAYER Opening Fletcher Menu'
-    - ' @OPENINV Fletcher'
-    - '@ENDIF'
   IEvent:
     Script:
     - '@IF s <inventorytitle> ?= Fletcher'

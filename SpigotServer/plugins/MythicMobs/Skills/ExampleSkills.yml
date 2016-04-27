@@ -71,10 +71,9 @@ Thorns:
   Cooldown: 2
   Conditions:
   - targetwithin 3
-  - targetinlineofsight true
   Skills:
   - message{msg="$boss; &4You are damaged by spikes on his armour. Stay back!"} @Trigger 1
-  - damage{a=4;i=false} @Trigger 1
+  - damage{a=3;i=false} @Trigger 1
 SummonSilverfish:
   Cooldown: 20
   Skills:
@@ -122,19 +121,16 @@ SummonMonica:
 SpreadFireSelf:
   Cooldown: 1
   Skills:
+  - delay 30  
   - message{msg="$boss; &4Ahh! That crazy witch lit me on fire... Save me Bill!"} @PlayersInRadius{r=30} 1
-  - ignite{ticks=30} @Self
-  - explosion{blockdamage=false;fire=true;yield=3} @Origin
-  - delay 30
-  - ignite{ticks=30} @Self
-  - explosion{blockdamage=false;fire=true;yield=3} @Origin
-  - delay 30
-  - ignite{ticks=30} @Self
-  - explosion{blockdamage=false;fire=true;yield=3} @Origin  
-  - delay 30
-  - ignite{ticks=30} @Self
-  - explosion{blockdamage=false;fire=true;yield=3} @Origin
-  - damage{amount=10;ignoreArmor=true} @Self
+  - explosion{blockdamage=false;fire=true;yield=1} @Origin
+  - delay 100
+  - explosion{blockdamage=false;fire=true;yield=1} @Origin
+  - delay 100
+  - explosion{blockdamage=false;fire=true;yield=1} @Origin
+  - delay 100
+  - explosion{blockdamage=false;fire=true;yield=1} @Origin
+  - damage{amount=20;ignoreArmor=true} @Self
 JumpToMoon:
   Cooldown: 10
   Skills:
@@ -175,3 +171,9 @@ MeteorEnd:
   Skills:
   - explosion{blockdamage=true;fire=true;yield=3} @Origin
   - remove{m=MeteorPointer} @Self
+Charged:
+  Cooldown: 1
+  Skills:
+  - message{msg="$boss; &4The cake is a lie!"} @PlayersInRadius{r=30} 1
+  - ignite{ticks=10} @Self
+  - explosion{blockdamage=true;fire=true;yield=3} @Origin
