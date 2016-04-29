@@ -138,9 +138,19 @@ HardWorld_nether:
   Inventory:
     CoolDown: 0
     Script:
+    - '@CALL Tech:IEvent'
+    - '@CALL Ballistics:IEvent'
+    - '@CALL Barracks:IEvent'
     - '@CALL Admin:IEvent'
-    - '@PLAYER Return to the normal world before attempting to use this menu.'
-    - '@CLOSEINV <playername>'
+    - '@CALL Fletcher:IEvent'
+    - '@CALL Barn:IEvent'
+    - '@CALL Menu:LOADING'
+    - '@CALL Menu:Menu'
+    - '@CALL Menu:PatchNotes'
+    - '@CALL Menu:BuilderControl'
+    - '@CALL Flag:IEvent'
+    - '@CALL Shared:WoodConversion'
+    - '@CALL Shared:EndIEvent'
   PlayerDeath:
     CoolDown: 0
     Script:
@@ -238,9 +248,19 @@ HardWorld_the_end:
   Inventory:
     CoolDown: 0
     Script:
+    - '@CALL Tech:IEvent'
+    - '@CALL Ballistics:IEvent'
+    - '@CALL Barracks:IEvent'
     - '@CALL Admin:IEvent'
-    - '@PLAYER Return to the normal world before attempting to use this menu.'
-    - '@CLOSEINV <playername>'
+    - '@CALL Fletcher:IEvent'
+    - '@CALL Barn:IEvent'
+    - '@CALL Menu:LOADING'
+    - '@CALL Menu:Menu'
+    - '@CALL Menu:PatchNotes'
+    - '@CALL Menu:BuilderControl'
+    - '@CALL Flag:IEvent'
+    - '@CALL Shared:WoodConversion'
+    - '@CALL Shared:EndIEvent'
   PlayerDeath:
     CoolDown: 0
     Script:
