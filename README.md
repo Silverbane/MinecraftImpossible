@@ -3,10 +3,12 @@ A Minecraft Spigot Server Configuration Collection
 
 Collected and Modified by Silversky Entertainment
 Version:a1.0
+How to play: https://www.youtube.com/watch?v=ZTDRX-XowPU 
+Discord: https://discord.gg/0xZiuqFfNdsZa6Ak
 
-I want to invite you and your friends to a survival Challenge: 
-Join 73.45.157.143:25566 but be prepared for the hardest Minecraft survival challenge you have ever experienced. 
-Goodluck.
+What it's all about: Enhanced Survival. Mostly a complete conversion of the game in ways but still honoring the vanilla concept. Basically you try to survive with a team in an unforgiving world where bosses have been added and the monster AI has been boosted. They dig to you, they build to you and they make you suffer. But in return you are given technology which once you build the buildings unlock soldiers to use, miners to mine, and catapults to unleash upon other teams trying to survive in the world.
+
+4/1/16: Minecraft 1.8.9 survival tournament started just join 73.73.200.15:26365 make a new team or join a team thats online. $25 Tigerdirect gift card goes to the winning team leader the winner is the first team to 2000pts!
 
 Included 32 Bukkit/Spigot Plugins:
 WorldEdit v6.1;no_git_id 
