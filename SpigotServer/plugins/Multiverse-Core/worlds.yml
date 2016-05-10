@@ -5,7 +5,7 @@ worlds:
     alias: HardWorld_the_end
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '16.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -95,61 +95,13 @@ worlds:
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  worldc_natersteen:
-    ==: MVWorld
-    hidden: 'false'
-    alias: worldc_natersteen
-    color: WHITE
-    style: NORMAL
-    pvp: 'false'
-    scale: '1.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: EASY
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'false'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'false'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-      currency: '-1'
-    hunger: 'true'
-    autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: CREATIVE
-    keepSpawnInMemory: 'false'
-    spawnLocation:
-      ==: MVSpawnLocation
-      x: -82.0
-      y: 67.0
-      z: -161.0
-      pitch: 0.0
-      yaw: 0.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NORMAL
-    seed: '235903696087171768'
-    generator: 'null'
-    playerLimit: '-1'
-    allowFlight: 'true'
   HardWorld_nether:
     ==: MVWorld
     hidden: 'false'
     alias: HardWorld_nether
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '8.0'
     respawnWorld: ''
     allowWeather: 'true'
@@ -191,61 +143,13 @@ worlds:
     generator: 'null'
     playerLimit: '-1'
     allowFlight: 'true'
-  worldc_Nicklealias:
-    ==: MVWorld
-    hidden: 'false'
-    alias: worldc_Nicklealias
-    color: WHITE
-    style: NORMAL
-    pvp: 'false'
-    scale: '1.0'
-    respawnWorld: ''
-    allowWeather: 'true'
-    difficulty: EASY
-    spawning:
-      ==: MVSpawnSettings
-      animals:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-      monsters:
-        ==: MVSpawnSubSettings
-        spawn: 'true'
-        spawnrate: '-1'
-        exceptions: []
-    entryfee:
-      ==: MVEntryFee
-      amount: '0.0'
-      currency: '-1'
-    hunger: 'true'
-    autoHeal: 'true'
-    adjustSpawn: 'true'
-    portalForm: ALL
-    gameMode: SURVIVAL
-    keepSpawnInMemory: 'false'
-    spawnLocation:
-      ==: MVSpawnLocation
-      x: 801.0
-      y: 4.0
-      z: -136.0
-      pitch: 0.0
-      yaw: 0.0
-    autoLoad: 'true'
-    bedRespawn: 'true'
-    worldBlacklist: []
-    environment: NORMAL
-    seed: '-2745386251925892763'
-    generator: 'null'
-    playerLimit: '-1'
-    allowFlight: 'true'
   HardWorld:
     ==: MVWorld
     hidden: 'false'
     alias: HardWorld
     color: WHITE
     style: NORMAL
-    pvp: 'false'
+    pvp: 'true'
     scale: '1.0'
     respawnWorld: ''
     allowWeather: 'true'

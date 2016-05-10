@@ -22,9 +22,5 @@ objects:
   VTSystem:
     Integers: {}
     Strings: {}
-    StringLists:
-      OnlinePlayers:
-      - Silverbane
-      OnlineUUIDs:
-      - 5140f688-861f-4780-a210-0e8ba54492e5
+    StringLists: {}
     Booleans: {}

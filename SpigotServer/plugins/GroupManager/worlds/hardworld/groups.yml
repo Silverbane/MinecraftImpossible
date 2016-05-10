@@ -20,34 +20,6 @@ groups:
       build: true
       prefix: '&4'
       suffix: ''
-  Gray:
-    default: false
-    permissions: []
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Blue:
-    default: false
-    permissions:
-    - builder.cancel
-    - builder.donate
-    - citizens.npc.edit.path
-    - citizens.npc.remove
-    - citizens.npc.select
-    - citizens.npc.tphere
-    - sentry.greeting
-    - sentry.guard
-    - sentry.ignore
-    - sentry.info
-    - sentry.target
-    - sentry.warning
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
   Builder:
     default: false
     permissions: []
@@ -58,27 +30,6 @@ groups:
     info:
       build: true
       prefix: '&2'
-      suffix: ''
-  Magenta:
-    default: false
-    permissions: []
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Black:
-    default: false
-    permissions:
-    - builder.cancel
-    - builder.donate
-    - citizens.npc.remove
-    - citizens.npc.select
-    - citizens.npc.tphere
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
       suffix: ''
   Admin:
     default: false
@@ -108,27 +59,6 @@ groups:
       build: false
       prefix: '&e'
       suffix: ''
-  '0':
-    default: false
-    permissions:
-    - builder.cancel
-    - builder.donate
-    - citizens.npc.remove
-    - citizens.npc.select
-    - citizens.npc.tphere
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Red:
-    default: false
-    permissions: []
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
   Moderator:
     default: false
     permissions: []
@@ -142,53 +72,4 @@ groups:
     info:
       build: true
       prefix: '&5'
-      suffix: ''
-  White:
-    default: false
-    permissions: []
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Yellow:
-    default: false
-    permissions:
-    - builder.cancel
-    - builder.donate
-    - citizens.npc.edit.path
-    - citizens.npc.remove
-    - citizens.npc.select
-    - citizens.npc.tphere
-    - sentry.greeting
-    - sentry.guard
-    - sentry.ignore
-    - sentry.info
-    - sentry.target
-    - sentry.warning
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Purple:
-    default: false
-    permissions: []
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
-      suffix: ''
-  Green:
-    default: false
-    permissions:
-    - builder.cancel
-    - builder.donate
-    - citizens.npc.remove
-    - citizens.npc.select
-    - citizens.npc.tphere
-    inheritance: []
-    info:
-      build: false
-      prefix: ''
       suffix: ''

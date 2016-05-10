@@ -21,9 +21,11 @@ world:
   Join:
     CoolDown: 0
     Script:
-    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
-      developing by donating through paypal at http://paypal.me/NathanSteen'
-    - '@CALL Shared:FirstJoin'
+    - '@CALL Shared:Join'
+  Quit:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:Quit'
 HardWorld:
   EntityDeath:
     CoolDown: 0
@@ -62,25 +64,11 @@ HardWorld:
   Join:
     CoolDown: 0
     Script:
-    - '@IF b $Setup.Active != True'
-    - ' @PLAYER There is no current game running. You will be teleported back to server
-      spawn.'
-    - ' @CMDOP warp spawn'
-    - ' @PAUSE 2'
-    - ' @CALL Shared:FirstJoin'
-    - '@ELSE'
-    - ' @IF b $HardWorld.<playername>SMSpawned != True'
-    - '   @PLAYER There is a game running but you have not selected a team. You will
-      be teleported back to server spawn.'
-    - '   @CMDOP warp spawn'
-    - '   @PAUSE 2'
-    - '   @CALL Shared:FirstJoin'
-    - ' @ENDIF'
-    - '@ENDIF'
-    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
-      developing by donating through paypal at http://paypal.me/NathanSteen'
-    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
-    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
+    - '@CALL Shared:Join'
+  Quit:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:Quit'
   Respawn:
     CoolDown: 0
     Script:
@@ -172,25 +160,11 @@ HardWorld_nether:
   Join:
     CoolDown: 0
     Script:
-    - '@IF b $Setup.Active != True'
-    - ' @PLAYER There is no current game running. You will be teleported back to server
-      spawn.'
-    - ' @CMDOP warp spawn'
-    - ' @PAUSE 2'
-    - ' @CALL Shared:FirstJoin'
-    - '@ELSE'
-    - ' @IF b $HardWorld.<playername>SMSpawned != True'
-    - '   @PLAYER There is a game running but you have not selected a team. You will
-      be teleported back to server spawn.'
-    - '   @CMDOP warp spawn'
-    - '   @PAUSE 2'
-    - '   @CALL Shared:FirstJoin'
-    - ' @ENDIF'
-    - '@ENDIF'
-    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
-      developing by donating through paypal at http://paypal.me/NathanSteen'
-    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
-    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
+    - '@CALL Shared:Join'
+  Quit:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:Quit'
   Respawn:
     CoolDown: 0
     Script:
@@ -282,25 +256,11 @@ HardWorld_the_end:
   Join:
     CoolDown: 0
     Script:
-    - '@IF b $HardWorld.GameMasterGameDrop != True'
-    - ' @PLAYER There is no current game running. You will be teleported back to server
-      spawn.'
-    - ' @CMDOP warp spawn'
-    - ' @PAUSE 2'
-    - ' @CALL Shared:FirstJoin'
-    - '@ELSE'
-    - ' @IF b $HardWorld.<playername>SMSpawned != True'
-    - '   @PLAYER There is a game running but you have not selected a team. You will
-      be teleported back to server spawn.'
-    - '   @CMDOP warp spawn'
-    - '   @PAUSE 2'
-    - '   @CALL Shared:FirstJoin'
-    - ' @ENDIF'
-    - '@ENDIF'
-    - '@PLAYER Do you like this plugin and server. Help us stay online and continue
-      developing by donating through paypal at http://paypal.me/NathanSteen'
-    - '@CMDCON title <playername> title {text:"Help By Donating",color:green}'    
-    - '@CMDCON title <playername> subtitle {text:"http://paypal.me/NathanSteen",color:green}' 
+    - '@CALL Shared:Join'
+  Quit:
+    CoolDown: 0
+    Script:
+    - '@CALL Shared:Quit'
   Respawn:
     CoolDown: 0
     Script:
