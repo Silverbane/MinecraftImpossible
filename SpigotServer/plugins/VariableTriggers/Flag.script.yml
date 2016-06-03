@@ -380,6 +380,8 @@ Scripts:
     - ' @CMDCON region flag -w HardWorld $HardWorld.<playername>CurrentTown deny-spawn CAVE_SPIDER,CREEPER,ENDER_DRAGON,ENDERMAN,GHAST,GIANT,MAGMA_CUBE,SKELETON,SLIME,SPIDER,WITCH,ZOMBIE'
     - ' @CMDCON region flag -w HardWorld $HardWorld.<playername>CurrentTown creeper-explosion deny'
     - ' @CMDCON region flag -w HardWorld $HardWorld.<playername>CurrentTown other-explosion deny' 
+    - ' @PAUSE 1'
+    - ' @CMDOP /replace 80 0'
     - ' @SETBOOL $<var:$<playername>.SMTeam>.Settled True'
     - ' @SETINT $HardWorld.<var:$HardWorld.<playername>CurrentTown>TownCopyBlocks 1'
     - ' @SETINT $HardWorld.<var:$HardWorld.<playername>CurrentTown>TownSize 1'
