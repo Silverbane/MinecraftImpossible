@@ -396,6 +396,7 @@ Scripts:
     - ' @CMDOP vt setloc HardWorld <var:$<playername>.SMTeam>FlagSpawn'
     - ' @CMDOP setwarp <var:$<playername>.SMTeam>Flag'
     - ' @CMDOP spawnpoint <playername>'
+    - ' @CMDOP climb off'
     - ' @SETSTR $HardWorld.<playername>ActivePlans Flag'
     - ' @SETSTR $<var:$<playername>.SMTeam>.TeamSpawnSet true'
     - ' @CMDCON title @a title {text:"Team <var:$<playername>.SMTeam> Ready",color:red}'

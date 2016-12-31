@@ -78,6 +78,15 @@ BloatedDrops:
   - 384:0 1-5 1
 SkeletonKingDrops:
   Drops:
-  - KingsCrown 0.01
+#  - KingsCrown 0.01
   - 371:0 32-64 1
-  - exp 100 1
+#  - exp 100 1
+ScoutDrops:
+  Drops:
+  - ShortBow 1 0.02
+  - ScoutLeatherBoots 1 0.02
+  - 373:16389 1-2 0.5
+  - 373:16456 1 0.1
+  - 388:0 1-2 1
+  - 384:0 2-5 1
+  - 298:0 1 0.1

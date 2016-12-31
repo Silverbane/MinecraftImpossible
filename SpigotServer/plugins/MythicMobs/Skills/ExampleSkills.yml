@@ -23,6 +23,11 @@ Points5:
   Skills:
   - message{msg="$boss; &4Gives you 5 points for killing."} @Trigger ~onDeath 1
   - command{cmd="vt run Shared:AddPoints5 $player"} ~onDeath 1
+MobTownDestruction:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4You have defeated this lair of monsters. But I will have more!"} @Trigger ~onDeath 1
+  - command{cmd="vt run MobTowns:BossDefeated $player"} ~onDeath 1
 MerchantPull:
   Cooldown: 15
   Conditions:
@@ -87,6 +92,18 @@ SummonWorms:
   - delay 20
   - summon{type=silverfish;a=2;r=5} @Self
   - summon{type=glowworm;a=2;r=5} @Self 0.2
+SummonArmy:
+  Cooldown: 100
+  Skills:
+  - message{msg="$boss; &4Oh you will fall to the might of the undead horde!"} @PlayersInRadius{r=30} 1
+  - delay 20
+  - summon{type=ZombieWarrior;a=2;r=5} @Self 0.4
+  - summon{type=SkeletalWarrior;a=2;r=5} @Self 0.4
+  - summon{type=ZombieRouge;a=2;r=5} @Self 0.3
+  - summon{type=SkeletalRouge;a=2;r=5} @Self 0.3
+  - summon{type=ZombieMonk;a=2;r=5} @Self 0.2
+  - summon{type=SkeletalMonk;a=2;r=5} @Self 0.2
+  - summon{type=GiantBoulderHurler;a=1;r=5} @Self 0.1
 ConsumeWorms:
   Cooldown: 20
   Skills:
@@ -151,6 +168,16 @@ MeteorShower:
   Cooldown: 10
   Skills:
   - summon{m=MeteorPointer;a=15;r=30}
+ThrowMeteorShower:
+  Cooldown: 10
+  Skills:
+  - msg 10:'$boss&e picks up some boulders.' >0 1
+  - potionself SLOW:20:7 >0 1
+  - delay 20
+  - summon{m=MeteorPointer;a=15;r=30}
+  - msg 10:'$boss&e throws the boulders.' >0 1
+  - effect boss sound subtitles.entity.blaze.shoot:1:1 >0 1
+  - effect:smokeswirl{duration=5;interval=5} @self
 MeteorPointerSpawn:
   Skills:
   - potion{type=INVISIBILITY;d=2000;l=1} @self
@@ -177,3 +204,148 @@ Charged:
   - message{msg="$boss; &4The cake is a lie!"} @PlayersInRadius{r=30} 1
   - ignite{ticks=10} @Self
   - explosion{blockdamage=true;fire=true;yield=3} @Origin
+SpawnTown:
+  Cooldown: 0
+  Skills:
+  - message{msg="$boss; &4The Scout has relayed your position. Beware there is a mob town near your base."} @Trigger ~onDeath 1
+  - command{cmd="vt run MobTowns:CreateTown $player"} ~onDeath 1
+Bash:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 5
+  - targetinlineofsight true
+  Skills:
+  - msg 15:'$boss&e bashes $target!' >0 1
+  - effect target sound random.anvil_land 1 1 >0 1
+  - damage 0:3:false >0 1
+  - potion 0:SLOW:20:7 >0 1
+Bleeding:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 5
+  - targetinlineofsight true
+  Skills:
+  - msg 15:'&e$target is bleeding.' >0 1
+  - effect boss sound damage.hit:1.5:1 >0 1
+  - effect target particle dripLava:1:1:2500:0.25:1 >0 1
+  - damage 0:1:false >0 1
+  - delay 20
+  - damage 0:1:false >0 1
+  - delay 20
+  - damage 0:1:false >0 1
+  - effect target particle dripLava:1:1:2500:0.25:1 >0 1
+  - delay 20
+  - damage 0:1:false >0 1
+  - delay 20
+  - damage 0:1:false >0 1
+  - effect target particle dripLava:1:1:2500:0.25:1 >0 1
+  - delay 20
+  - damage 0:1:false >0 1
+Charge:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 20
+  - targetinlineofsight true
+  Skills:
+  - msg 15:'$boss&e charges towards $target.' >0 1
+  - effect boss particle crit:1:1:250:2:0 >0 1
+  - potionself SPEED:20:5 >0 1
+Kick:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 5
+  - targetinlineofsight true
+  Skills:
+  - msg 15:'$boss&e kicks $target' >0 1
+  - potion 0:HARM:10:1 >0 1
+  - potion CONFUSION:60:3:false >0 1
+  - throw 0:5:1 >0 1
+Flurry:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 5
+  - targetinlineofsight true
+  Skills:
+  - msg 15:'$target&e unleashes a flurry of blows on $target' >0 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+  - potion 0:HARM:10:1 >0 0.75
+  - delay 1
+PlayerSummon:
+  Cooldown: 1
+  Conditions:
+  - targetnotwithin 5
+  Skills:
+  - msg 15:'$target&e has been summoned.' >0 1
+  - forcepull 0 >0 1
+  - potion 10:SLOW:20:7
+Stealth:
+  Cooldown: 1
+  Conditions:
+  - targetwithin 30
+  Skills:
+  - msg 15:'$boss&e fades away.' >0 1
+  - potionself INVISIBILITY:200:1 >0 1
+  - potionself INCREASE_DAMAGE:200:3 >0 1
+  - effect boss particles largesmoke:1:1:25:1:0.5 >0 1
+HealSelf:
+  Cooldown: 1
+  Skills:
+  - msg 10:'$boss&e begins casting a spell.' >0 1
+  - potionself SLOW:40:7 >0 1
+  - delay 40
+  - msg 10:'$target&e has been healed.' >0 1
+  - effect boss sound mob.wither.spawn:1:1 >0 1
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 25 >0 1
+GroupHeal:
+  Cooldown: 1
+  Skills:
+  - msg 10:'$boss&e begins casting a spell.' >0 1
+  - potionself SLOW:60:7
+  - delay 60
+  - msg 10:'$boss&e heals their allies.' >0 1
+  - effect boss sound mob.wither.spawn:1:1 >0 1
+  - effect boss particles heart:5:1:250:1 >0 1
+  - potionmobs 10:HEAL:10:1 witch, wolf, spider, cavespider >0 1
+  - potionmobs 10:HARM:10:1 witherskeleton, skeleton, zombie, villagezombie >0 1
+Regeneration:
+  Cooldown: 1
+  Skills:
+  - msg 15:'$boss&e begins casting a spell.' >0 1
+  - potionself SLOW:60:7 >0 1
+  - delay 60
+  - msg 15:'$target&e begins regenerating.' >0 1
+  - effect boss sound mob.wither.spawn:1:1 >0 1
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 5 >0 1
+  - delay 20
+  - healself 5 >0 1
+  - delay 20
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 5 >0 1
+  - delay 20
+  - healself 5 >0 1
+  - delay 20
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 5 >0 1
+  - delay 20
+  - healself 5 >0 1
+  - delay 20
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 5 >0 1
+  - delay 20
+  - healself 5 >0 1
+  - delay 20
+  - effect boss particles heart:1:1:50:1:0 >0 1
+  - healself 5 >0 1
+  - delay 20
+  - healself 5 >0 1
