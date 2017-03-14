@@ -93,3 +93,11 @@ RandomMeteorCreeper:
   Conditions:
   - worldtime 13801-22200
   - lunarphase 4
+RandomSkeletonScout:
+  MobType: SkeletonScout
+  Worlds: HardWorld
+  Chance: 0.03
+  Priority: 93
+  Action: add
+  Conditions:
+  - worldtime 13801-22200

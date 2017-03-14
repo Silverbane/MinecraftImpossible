@@ -171,11 +171,11 @@ MeteorShower:
 ThrowMeteorShower:
   Cooldown: 10
   Skills:
-  - msg 10:'$boss&e picks up some boulders.' >0 1
+  - message{msg="$boss; &4picks up some boulders."} @PlayersInRadius{r=30} 1
   - potionself SLOW:20:7 >0 1
   - delay 20
   - summon{m=MeteorPointer;a=15;r=30}
-  - msg 10:'$boss&e throws the boulders.' >0 1
+  - message{msg="$boss; &4throws the boulders."} @PlayersInRadius{r=30} 1
   - effect boss sound subtitles.entity.blaze.shoot:1:1 >0 1
   - effect:smokeswirl{duration=5;interval=5} @self
 MeteorPointerSpawn:
@@ -215,7 +215,7 @@ Bash:
   - targetwithin 5
   - targetinlineofsight true
   Skills:
-  - msg 15:'$boss&e bashes $target!' >0 1
+  - message{msg="$boss; &4bashes $target!"} @PlayersInRadius{r=30} 1
   - effect target sound random.anvil_land 1 1 >0 1
   - damage 0:3:false >0 1
   - potion 0:SLOW:20:7 >0 1
@@ -225,7 +225,7 @@ Bleeding:
   - targetwithin 5
   - targetinlineofsight true
   Skills:
-  - msg 15:'&e$target is bleeding.' >0 1
+  - message{msg="$boss; &4target is bleeding."} @PlayersInRadius{r=30} 1
   - effect boss sound damage.hit:1.5:1 >0 1
   - effect target particle dripLava:1:1:2500:0.25:1 >0 1
   - damage 0:1:false >0 1
@@ -247,7 +247,7 @@ Charge:
   - targetwithin 20
   - targetinlineofsight true
   Skills:
-  - msg 15:'$boss&e charges towards $target.' >0 1
+  - message{msg="$boss; &4charges towards $target"} @PlayersInRadius{r=30} 1
   - effect boss particle crit:1:1:250:2:0 >0 1
   - potionself SPEED:20:5 >0 1
 Kick:
@@ -256,7 +256,7 @@ Kick:
   - targetwithin 5
   - targetinlineofsight true
   Skills:
-  - msg 15:'$boss&e kicks $target' >0 1
+  - message{msg="$boss; &4 kicks $target"} @PlayersInRadius{r=30} 1
   - potion 0:HARM:10:1 >0 1
   - potion CONFUSION:60:3:false >0 1
   - throw 0:5:1 >0 1
@@ -266,7 +266,7 @@ Flurry:
   - targetwithin 5
   - targetinlineofsight true
   Skills:
-  - msg 15:'$target&e unleashes a flurry of blows on $target' >0 1
+  - message{msg="$boss; &4 unleashes a flurry of blows on $target"} @PlayersInRadius{r=30} 1
   - potion 0:HARM:10:1 >0 0.75
   - delay 1
   - potion 0:HARM:10:1 >0 0.75
@@ -284,7 +284,7 @@ PlayerSummon:
   Conditions:
   - targetnotwithin 5
   Skills:
-  - msg 15:'$target&e has been summoned.' >0 1
+  - message{msg="$target&e has been summoned."} @PlayersInRadius{r=30} 1
   - forcepull 0 >0 1
   - potion 10:SLOW:20:7
 Stealth:
@@ -292,27 +292,27 @@ Stealth:
   Conditions:
   - targetwithin 30
   Skills:
-  - msg 15:'$boss&e fades away.' >0 1
+  - message{msg="$boss&e fades away."} @PlayersInRadius{r=30} 1
   - potionself INVISIBILITY:200:1 >0 1
   - potionself INCREASE_DAMAGE:200:3 >0 1
   - effect boss particles largesmoke:1:1:25:1:0.5 >0 1
 HealSelf:
   Cooldown: 1
   Skills:
-  - msg 10:'$boss&e begins casting a spell.' >0 1
+  - message{msg="$boss&e begins casting a spell."} @PlayersInRadius{r=30} 1
   - potionself SLOW:40:7 >0 1
   - delay 40
-  - msg 10:'$target&e has been healed.' >0 1
+  - message{msg="$target&e has been healed."} @PlayersInRadius{r=30} 1
   - effect boss sound mob.wither.spawn:1:1 >0 1
   - effect boss particles heart:1:1:50:1:0 >0 1
   - healself 25 >0 1
 GroupHeal:
   Cooldown: 1
   Skills:
-  - msg 10:'$boss&e begins casting a spell.' >0 1
+  - message{msg="$boss&e begins casting a spell."} @PlayersInRadius{r=30} 1
   - potionself SLOW:60:7
   - delay 60
-  - msg 10:'$boss&e heals their allies.' >0 1
+  - message{msg="$boss&e heals their allies."} @PlayersInRadius{r=30} 1
   - effect boss sound mob.wither.spawn:1:1 >0 1
   - effect boss particles heart:5:1:250:1 >0 1
   - potionmobs 10:HEAL:10:1 witch, wolf, spider, cavespider >0 1
@@ -320,10 +320,10 @@ GroupHeal:
 Regeneration:
   Cooldown: 1
   Skills:
-  - msg 15:'$boss&e begins casting a spell.' >0 1
+  - message{msg="$boss&e begins casting a spell."} @PlayersInRadius{r=30} 1
   - potionself SLOW:60:7 >0 1
   - delay 60
-  - msg 15:'$target&e begins regenerating.' >0 1
+  - message{msg="$target&e begins regenerating."} @PlayersInRadius{r=30} 1
   - effect boss sound mob.wither.spawn:1:1 >0 1
   - effect boss particles heart:1:1:50:1:0 >0 1
   - healself 5 >0 1

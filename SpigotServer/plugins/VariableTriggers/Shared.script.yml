@@ -1380,7 +1380,7 @@ Scripts:
     - '             @AND b $HardWorld.<var:$<playername>.MobTownsBuildingIDTMP>UnderAttack != True'
     - '                 @SETSTR $<playername>.MobTownsBuildingID $<playername>.MobTownsBuildingIDTMP'
     - '                 @SETBOOL $HardWorld.<var:$<playername>.SMTeam>MobAssaultRunning True'
-    - '                 @CMDOP vt run MobTowns MobAssault'
+    - '                 @CMDOP vt run MobTowns:MobAssault'
     - '             @ENDIF'
     - '         @ENDIF'
     - '     @ENDIF'

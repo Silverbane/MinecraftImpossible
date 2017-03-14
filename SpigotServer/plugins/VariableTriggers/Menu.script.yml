@@ -135,7 +135,7 @@ Scripts:
     - '     @SETSTR $HardWorld.<playername>CheckType SpiralCheck'
     - '     @CALL Shared:BuildingID'
     - '     @IF s $<playername>.FoundCommandBlock = True'
-    - '       @CALL $HardWorld.<playername>BuildingCategory:Attack'
+    - '       @CALL <var:$HardWorld.<playername>BuildingCategory>:Attack'
     - '     @ELSE'
     - '       @PLAYER Cannot Find Building Command Block to Attack'
     - '     @ENDIF'

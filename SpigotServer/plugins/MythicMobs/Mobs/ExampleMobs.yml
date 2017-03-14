@@ -272,7 +272,7 @@ SkeletonScout:
   Damage: 6
   Skills:
   - skill{s=Points2} @Trigger ~onDeath 1
-  - skill{s=SpawnTown} @Trigger ~onDeath 1
+  - skill{s=SpawnTown} @Trigger ~onDeath 0.3
   Equipment:
   - ShortBow:0
   - leather_helmet:4
@@ -283,7 +283,7 @@ SkeletonScout:
   - ScoutDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
+    MovementSpeed: 0.3
     MaxCombatDistance: 25
     PreventOtherDrops: false
 SpiderScout:
@@ -296,13 +296,13 @@ SpiderScout:
   Drops:
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
+    MovementSpeed: 0.3
     MaxCombatDistance: 25
     PreventOtherDrops: false
 ZombieWarrior:
   Mobtype: zombie
   Display: '&9a zombie warrior'
-  Health: 100
+  Health: 40
   Damage: 2
   Equipment:
   - COS_ChainHead:4
@@ -320,7 +320,7 @@ ZombieWarrior:
 SkeletalWarrior:
   Mobtype: skeleton
   Display: '&9a skeletal warrior'
-  Health: 100
+  Health: 30
   Damage: 2
   DamageModifiers:
   - FIRE 0.75
@@ -345,7 +345,7 @@ SkeletalWarrior:
 ZombieRogue:
   Mobtype: zombie
   Display: '&9a zombie rogue'
-  Health: 50
+  Health: 20
   Damage: 3
   Equipment:
   - COS_LeatherHead:4
@@ -363,7 +363,7 @@ ZombieRogue:
 SkeletalRogue:
   Mobtype: skeleton
   Display: '&9a skeletal rogue'
-  Health: 50
+  Health: 20
   Damage: 3
   Equipment:
   - COS_LeatherHead:4
@@ -382,7 +382,7 @@ SkeletalRogue:
 ZombieMonk:
   Mobtype: zombie
   Display: '&9a zombie monk'
-  Health: 75
+  Health: 45
   Damage: 2.5
   Equipment:
   - COS_LeatherHead:4
@@ -399,7 +399,7 @@ ZombieMonk:
 SkeletalMonk:
   Mobtype: skeleton
   Display: '&9a skeletal monk'
-  Health: 75
+  Health: 40
   Damage: 2.5
   Equipment:
   - COS_LeatherHead:4
@@ -415,23 +415,21 @@ SkeletalMonk:
   - skill{s=Flurry} ~onAttack 0.2
   - skill{s=Healself} =25% 1
 GiantBoulderHurler:
-  Type: GIANT
+  Type: ghast
   Display: '&6Giant Boulder Hurler'
-  Health: 200
-  Damage: 20
+  Health: 50
+  Damage: 4
   Skills:
-  - skill{s=MeteorShower} @NearestPlayer ~onTimer:100 0.5
-  - skill{s=Kick} ~onDamaged 0.7
+  - skill{s=MeteorShower} @Self ~onDamaged 0.1
   Equipment:
   Drops:
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.1
-    MaxCombatDistance: 100
+    MovementSpeed: 0.2
 SkeletalWizard:
   Mobtype: skeleton
   Display: '&9a skeletal wizard'
-  Health: 300
+  Health: 150
   Damage: 6
   Equipment:
   - COS_RedHead:4
@@ -443,10 +441,45 @@ SkeletalWizard:
     AlwaysShowName: true
     MovementSpeed: 0.3
   Skills:
-  - skill{s=MeteorShower} @NearestPlayer ~onTimer:100 0.5
+  - skill{s=MeteorShower} @Self ~onDamaged 0.05
   - skill{s=Points5} @Trigger ~onDeath 1
   - skill{s=MobTownDestruction} @Trigger ~onDeath 1
   - skill{s=Kick} ~onDamaged 0.2
   - skill{s=Healself} =25% 1
   - skill{s=SummonSilverfish} @Self >0 0.4
   - skill{s=SummonArmy} @Self >0 0.2
+Zombie:
+  Type: ZOMBIE
+  Display: '&6Zombie'
+  Health: 20
+  Damage: 4
+  Skills:
+  Equipment:
+  - leather_helmet:4
+#  - leather_leggings:2
+#  - leather_chestplate:3
+#  - leather_boots:1
+  Drops:
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.3
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
+Skeleton:
+  Type: SKELETON
+  Display: '&Skeleton'
+  Health: 20
+  Damage: 5
+  Skills:
+  Equipment:
+  - ShortBow:0
+  - leather_helmet:4
+#  - leather_leggings:2
+#  - leather_chestplate:3
+#  - leather_boots:1
+  Drops:
+  Options:
+    AlwaysShowName: false
+    MovementSpeed: 0.3
+    MaxCombatDistance: 25
+    PreventOtherDrops: false
