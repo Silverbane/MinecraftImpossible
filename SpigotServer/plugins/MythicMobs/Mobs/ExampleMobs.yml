@@ -15,7 +15,6 @@ GlowWorm:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ThornedZombie:
   Type: ZOMBIE
@@ -33,7 +32,6 @@ ThornedZombie:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ThornedZombieTank:
   Type: ZOMBIE
@@ -52,8 +50,6 @@ ThornedZombieTank:
   - ThornedTankDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 BloatedZombie:
   Type: ZOMBIE
@@ -74,8 +70,6 @@ BloatedZombie:
   - BloatedDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ZombieMerchant:
   Type: ZOMBIE
@@ -94,8 +88,6 @@ ZombieMerchant:
   - MerchantDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ZombieBattleMerchant:
   Type: ZOMBIE
@@ -116,7 +108,6 @@ ZombieBattleMerchant:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ZombieRichMerchant:
   Type: ZOMBIE
@@ -136,8 +127,6 @@ ZombieRichMerchant:
   - RichMerchantDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 SkeletonMerchant:
   Type: SKELETON
@@ -158,8 +147,6 @@ SkeletonMerchant:
   - ArcherMerchantDrops
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 CrazyHillary:
   Type: WITCH
@@ -178,7 +165,6 @@ CrazyHillary:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 Monica:
   Type: WITCH
@@ -196,7 +182,6 @@ Monica:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 MeteorCreeper:
   Type: CREEPER
@@ -217,7 +202,6 @@ MeteorCreeper:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 MeteorPointer:
   Type: bat
@@ -262,7 +246,6 @@ ChargedCreeper:
     SuperCharged: true
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 SkeletonScout:
   Type: SKELETON
@@ -284,7 +267,6 @@ SkeletonScout:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 SpiderScout:
   Type: SPIDER
@@ -297,7 +279,6 @@ SpiderScout:
   Options:
     AlwaysShowName: true
     MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 ZombieWarrior:
   Mobtype: zombie
@@ -312,7 +293,6 @@ ZombieWarrior:
   - COS_StoneSword:0
   Options:
     AlwaysShowName: false
-    MovementSpeed: 0.2
     KnockbackResistance: 0.9
   Skills:
   - skill{s=Points1} @Trigger ~onDeath 1
@@ -335,7 +315,6 @@ SkeletalWarrior:
   - COS_StoneSword:0
   Options:
     AlwaysShowName: false
-    MovementSpeed: 0.2
     KnockbackResistance: 0.9
   Skills:
   - skill{s=Points2} @Trigger ~onDeath 1
@@ -425,7 +404,6 @@ GiantBoulderHurler:
   Drops:
   Options:
     AlwaysShowName: true
-    MovementSpeed: 0.2
 SkeletalWizard:
   Mobtype: skeleton
   Display: '&9a skeletal wizard'
@@ -438,6 +416,7 @@ SkeletalWizard:
   - COS_RedFeet:1
   - COS_Staff:0
   Options:
+    Despawn: false
     AlwaysShowName: true
     MovementSpeed: 0.3
   Skills:
@@ -462,8 +441,6 @@ Zombie:
   Drops:
   Options:
     AlwaysShowName: false
-    MovementSpeed: 0.3
-    MaxCombatDistance: 25
     PreventOtherDrops: false
 Skeleton:
   Type: SKELETON
@@ -480,6 +457,15 @@ Skeleton:
   Drops:
   Options:
     AlwaysShowName: false
-    MovementSpeed: 0.3
-    MaxCombatDistance: 25
+    PreventOtherDrops: false
+Creeper:
+  Type: Creeper
+  Display: '&6Creeper'
+  Health: 20
+  Damage: 49
+  Skills:
+  Equipment:
+  Drops:
+  Options:
+    AlwaysShowName: false
     PreventOtherDrops: false
