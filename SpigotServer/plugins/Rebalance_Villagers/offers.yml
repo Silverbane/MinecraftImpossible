@@ -294,7 +294,6 @@ potential-offers:
             '371': 0.2
             
         sells:
-            bookshelf: 0.8
             glass: 0.2
             compass: 0.2
             clock: 0.2
@@ -310,8 +309,33 @@ potential-offers:
             '371': 0.8
             
         other:
-            nothing
-            
+            lapis_for_tech:
+                buyA:
+#Lapis Block
+                    item: '22'
+                    amount: [1]
+                buyB:
+                    item: currency-item
+                    amount: [3, 12]
+                sell:
+#Book and Quill
+                    item: '386'
+                    amount: [9, 18]
+                probability: 0.9
+            redstone_for_tech:
+                buyA:
+#Redstone
+                    item: '331'
+                    amount: [1, 3]
+                buyB:
+                    item: currency-item
+                    amount: [1, 3]
+                sell:
+#Book and Quill
+                    item: '386'
+                    amount: [1, 3]
+                probability: 0.9
+                
     priest:
         buys:
 #Gunpowder

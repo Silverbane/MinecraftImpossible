@@ -1,10 +1,10 @@
 general:
   #name of the cannon. This will show of on the cannon sign - therefore keep it short
-  designName: "Catapult"
+  designName: "Cannon"
   #This will be used for messages and will replace CANNON in all messages. (e.g. You created a classic cannon)
-  messageName: "catapult"
+  messageName: "cannon"
   #a short description of the cannon
-  description: "A small basic catapult with short range and limited projectiles."
+  description: "A powerful cannon that can use all projectiles except mortars."
   #last user of cannon becomes to it's owner (cannon is public)
   lastUserBecomesOwner: true
 

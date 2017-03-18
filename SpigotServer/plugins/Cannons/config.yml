@@ -111,6 +111,8 @@ superbreakerBlocks:
 unbreakableBlocks:
   # bedrock
   - 7
+  # commandblock
+  - 137
 
 
 #some items will consumed when used as projectile (e.g. a egg will be thrown) and the event has to be canceled, else the item can't be used as projectile

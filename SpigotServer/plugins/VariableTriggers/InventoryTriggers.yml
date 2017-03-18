@@ -323,27 +323,9 @@ Technology:
 - 'item: book_and_quill, meta: 0, amount: 1, name: Research Selected Technology, lore:
   Convert a Book and Quill into 1 Research Point % First select the technology then
   click here to research, slot: 8'
-- 'item: ink_sack, meta: 4, amount: 1, name: Research Selected Technology, lore: Convert
-  Lapis Lazuli into 1 Research Point % First select the technology then click here
-  to research, slot: 17'
-- 'item: ink_sack, meta: 5, amount: 1, name: Research Selected Technology, lore: Convert
-  Purple Dye into 2 Research Points % First select the technology then click here
-  to research, slot: 26'
-- 'item: ink_sack, meta: 6, amount: 1, name: Research Selected Technology, lore: Convert
-  Cyan Dye into 2 Research Points % First select the technology then click here to
-  research, slot: 35'
-- 'item: lapis_block, meta: 0, amount: 1, name: Research Selected Technology, lore:
-  Convert Lapis Lazuli Block into 9 Research Points % First select the technology
-  then click here to research, slot: 44'
-- 'item: emerald, meta: 0, amount: 1, name: Research Selected Technology, lore: Convert
-  1 Emerald and Experience into Research Points (RP) % First select the technology
-  then click here to research % CONVERSION RATE are approximated Exp to RP % 20 and
-  29 Gives 1 RP - At 20 370 EXP per RP % 30 and 39 Gives 3 RP - At 30 275 EXP per
-  RP % 40 and 49 Gives 8 RP - At 40 220 EXP per RP % 50 and 59 Gives 20 RP - At 50
-  170 EXP per RP % 60 and 69 Gives 40 RP - At 60 143 EXP per RP % 70 and 79 Gives
-  70 RP - At 70 125 EXP per RP % 80 and 89 Gives 110 RP - At 80 113 EXP per RP % 90
-  and 99 Gives 160 RP - At 90 106 EXP per RP % 100 and up Gives 250 RP - At 100 88
-  EXP per RP, slot: 53'
+- 'item: experience_bottle, meta: 0, amount: 10, name: Research Selected Technology, lore: Convert
+  Experience into Research Points (RP) % First select the technology
+  then click here to research % At level 10 (160exp) you get 1 RP. % Every 10 levels you get bonus RP % Higher levels get better conversion rates, slot: 17'
 BuilderControl:
 - 'cancelled: true'
 - 'title: BuilderControl'

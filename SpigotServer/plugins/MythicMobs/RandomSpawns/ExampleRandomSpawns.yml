@@ -100,4 +100,3 @@ RandomSkeletonScout:
   Priority: 93
   Action: add
   Conditions:
-  - worldtime 13801-22200

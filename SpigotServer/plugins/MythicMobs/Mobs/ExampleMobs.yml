@@ -444,7 +444,7 @@ Zombie:
     PreventOtherDrops: false
 Skeleton:
   Type: SKELETON
-  Display: '&Skeleton'
+  Display: '&6Skeleton'
   Health: 20
   Damage: 5
   Skills:

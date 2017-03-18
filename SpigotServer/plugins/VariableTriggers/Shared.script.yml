@@ -2266,3 +2266,12 @@ Scripts:
     - '     @ENDIF'
     - ' @ENDSWITCH'
     - '@ENDIF'
+  CBMenu:
+    Script:
+    - '   @IF s <worldname> = world'
+    - '     @IF b $<playername>.FirstJoin != true'
+    - '       @ADDLIST @HardWorld.PlayerList <playername>'
+    - '       @SETBOOL $<playername>.FirstJoin true'
+    - '     @ENDIF'
+    - '     @OPENINV Setup'
+    - '   @ENDIF'
