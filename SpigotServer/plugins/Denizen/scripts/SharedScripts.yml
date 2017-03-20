@@ -26,16 +26,15 @@ Sentry:
   type: assignment
   actions:
     on assignment:
-    - execute as_server "vt setint <npc.location.world.name> <npc.owner.name>CitizenID <npc.id>"
+    - execute as_server "vt setint HardWorld <npc.owner.name>CitizenID <npc.id>"
     - execute as_server "vt run Shared CitizenID <npc.owner.name>"
     - trigger name:click toggle:true
     - flag npc healloop:0
     on death:
-    - execute as_server "broadcast LOG vt addint <npc.location.world.name> <npc.owner.name>SentryDeathCount 1 vt subint <npc.location.world.name> <npc.name.nickname>Pop 1 vt setbool <npc.location.world.name> <npc.name>Dead True"
-    - execute as_server "vt addint <npc.location.world.name> <npc.owner.name>SentryDeathCount 1"
-    - execute as_server "vt subint <npc.location.world.name> <npc.name.nickname>Pop 1"
-    - execute as_server "vt setbool <npc.location.world.name> <npc.name>Dead True"
-#    - execute as_server "npc despawn <npc.id>"
+#    - execute as_server "broadcast LOG vt addint HardWorld <npc.owner.name>SentryDeathCount 1 vt subint HardWorld <npc.name.nickname>Pop 1 vt setbool HardWorld <npc.name>Dead True"
+    - execute as_server "vt addint HardWorld <npc.owner.name>SentryDeathCount 1"
+    - execute as_server "vt subint HardWorld <npc.name.nickname>Pop 1"
+    - execute as_server "vt setbool HardWorld <npc.name>Dead True"
     - flag npc healloop:0
     on click:
     - if <npc.flag[healloop]> > 0 { 

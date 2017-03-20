@@ -581,12 +581,12 @@ Scripts:
     Script:
     - '     @IF s $HardWorld.<playername>CitizenSelectType = New'
     - '       @CMDOP npc create <var:$HardWorld.<playername>CitizenTeamID> --type PLAYER --trait sentry'
+    - '       @SETSTR $<var:$HardWorld.<playername>CitizenTeamID>.SMTeam $<playername>.SMTeam'
     - '       @SETBOOL $HardWorld.<var:$HardWorld.<playername>CitizenTeamID>Built True'
     - '       @PAUSE 2'
     - '       @CMDCON scoreboard teams join <var:$<playername>.SMTeam> <var:$HardWorld.<playername>CitizenTeamID>'
     # Setting up sentry default attack list.
     - '       @PLAYER &8LOG Start Hire script'
-    - '       @CMDCON scoreboard teams join <var:$<playername>.SMTeam> <var:$<playername>.SMTeam>'
     - '       @CMDOP sentry ignore add group:<var:$<playername>.SMTeam>'
     - '       @SETINT $HardWorld.TeamListCountTmp 0'
     - '       @LOOP @HardWorld.TeamList'

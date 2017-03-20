@@ -2,27 +2,27 @@ Points1:
   Cooldown: 0
   Skills:
   - message{msg="$boss; &4Gives you 1 point for killing"} @Trigger ~onDeath 1
-  - command{cmd="vt run Shared:AddPoints1 $player"} ~onDeath 1
+  - command{cmd="vt addint $player MMPoints 1"} ~onDeath 1  
 Points2:
   Cooldown: 0
   Skills:
   - message{msg="$boss; &4Gives you 2 points for killing."} @Trigger ~onDeath 1
-  - command{cmd="vt run Shared:AddPoints2 $player"} ~onDeath 1
+  - command{cmd="vt addint $player MMPoints 2"} ~onDeath 1
 Points3:
   Cooldown: 0
   Skills:
   - message{msg="$boss; &4Gives you 3 points for killing."} @Trigger ~onDeath 1
-  - command{cmd="vt run Shared:AddPoints3 $player"} ~onDeath 1
+  - command{cmd="vt addint $player MMPoints 3"} ~onDeath 1
 Points4:
   Cooldown: 0
   Skills:
   - message{msg="$boss; &4Gives you 4 points for killing."} @Trigger ~onDeath 1
-  - command{cmd="vt run Shared:AddPoints4 $player"} ~onDeath 1
+  - command{cmd="vt addint $player MMPoints 4"} ~onDeath 1
 Points5:
   Cooldown: 0
   Skills:
   - message{msg="$boss; &4Gives you 5 points for killing."} @Trigger ~onDeath 1
-  - command{cmd="vt run Shared:AddPoints5 $player"} ~onDeath 1
+  - command{cmd="vt addint $player MMPoints 5"} ~onDeath 1
 MobTownDestruction:
   Cooldown: 0
   Skills:
