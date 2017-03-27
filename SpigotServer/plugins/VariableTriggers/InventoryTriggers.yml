@@ -103,9 +103,12 @@ Ballistics:
 - 'title: Ballistics'
 - 'slots: 18'
 - 'item: paper, meta: 0, amount: 1, name: Opens Help, slot: 0'
+- 'item: arrow, meta: 0, amount: 1, name: Small Ballista, lore: Place plans for building
+  a Small Ballista. % Must be at least 25 blocks away % from
+  nearest enemy territory., slot: 1'
 - 'item: wood, meta: 0, amount: 1, name: Catapult, lore: Place plans for building
   a Catapult. % Requires Tech Ballistics I. % Must be at least 25 blocks away % from
-  nearest enemy territory., slot: 1'
+  nearest enemy territory., slot: 2'
 - 'item: workbench, meta: 0, amount: 1, name: BUILD ACCEPTED PLAN, lore: Builds the
   structure % that you have selected plans for., slot: 8'
 - 'item: compass, meta: 0, amount: 1, name: What Direction Am I Facing, lore: Figure

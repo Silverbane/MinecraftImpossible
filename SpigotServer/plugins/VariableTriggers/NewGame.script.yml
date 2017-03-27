@@ -87,6 +87,7 @@ Scripts:
     - ' @SETBOOL $HardWorld.<var:$<playername>.TeamSelection>TeamCreated True'
     - ' @SETSTR $HardWorld.<var:$<playername>.TeamSelection>TeamLeader <playername>'
     - ' @PLAYER You are the team leader for the $<playername>.TeamSelection team.'
+    - ' @CALL Tech:StartingTech'
     - ' @PAUSE 0.5'
     - '@ENDIF'
     - '@CALL NewGame:JoinTeamAccept'

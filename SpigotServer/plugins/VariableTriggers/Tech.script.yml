@@ -164,6 +164,23 @@ Scripts:
     - ' @CMDCON mangaddp $<playername>.SMTeam sentry.guard'
     - ' @CMDCON mangaddp $<playername>.SMTeam citizens.npc.edit.path'
     - '@ENDIF'
+  StartingTech:
+    Script:
+  # STARTING Techs
+    - ' @CMDCON manselect $Config.WorldName'
+    - ' @PAUSE 0.5'
+    # Small Ballista
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.autoreload'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.rename'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.adjust'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.ramrod'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.autoaim'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.observer'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.build'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.load'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection ballista.player.fire'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection cannons.projectile.default'
+    - ' @CMDCON mangaddp $<playername>.TeamSelection cannons.player.adjust'
   IEvent:
     Script:
     - '@IF s <inventorytitle> ?= Technology'

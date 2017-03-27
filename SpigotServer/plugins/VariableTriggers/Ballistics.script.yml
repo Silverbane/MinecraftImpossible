@@ -9,6 +9,36 @@ Scripts:
     - '   @CASE 0'
     - '     @CALL Ballistics:MenuHelp'
     - '   @CASE 1'
+    - '       @SETSTR $HardWorld.<playername>PlanSchematic Ballista'
+              # Figure out what direction the player is facing to load correct facing schematic
+    - '       @CALL Shared:DirectionFacing'
+    - '       @SETSTR $HardWorld.<playername>PlanSchematicDirection $HardWorld.<playername>DirectionFacing'
+    - '         @IF s $HardWorld.<playername>PlanSchematicDirection = North'
+                # Change the origin based on North facing schematic East +X West -X North -Z South +Z .. Then Y depending on basement or not.
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeX 0' 
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeY 0'
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeZ -3'
+    - '         @ENDIF'
+    - '         @IF s $HardWorld.<playername>PlanSchematicDirection = East'
+                  # Change the origin based on East facing schematic East +X West -X North -Z South +Z .. Then Y depending on basement or not.
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeX +3' 
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeY 0'
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeZ 0'
+    - '         @ENDIF'
+    - '         @IF s $HardWorld.<playername>PlanSchematicDirection = South'
+                  # Change the origin based on South facing schematic East +X West -X North -Z South +Z .. Then Y depending on basement or not.
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeX 0' 
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeY 0'
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeZ +3'
+    - '         @ENDIF'
+    - '         @IF s $HardWorld.<playername>PlanSchematicDirection = West'
+                  # Change the origin based on West facing schematic East +X West -X North -Z South +Z .. Then Y depending on basement or not.
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeX -3' 
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeY 0'
+    - '           @SETINT $HardWorld.<playername>PlanLocChangeZ 0'
+    - '         @ENDIF'
+    - '       @CALL Ballistics:Plan'
+    - '   @CASE 2'
             # Check if tech discovered by team.
     - '     @IF b $HardWorld.<var:$<playername>.SMTeam>BallisticsIDiscovered = True'
     - '       @SETSTR $HardWorld.<playername>PlanSchematic Catapult'

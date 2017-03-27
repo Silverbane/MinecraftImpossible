@@ -606,6 +606,8 @@ Scripts:
 #    - '@CMDOP npc playerlist'
     - '       @CMDOP npc pushable'
     - '       @CMDOP sentry guard <playername>'
+    - '       @ADDINT $HardWorld.<playername>NPCFollowDist 2'
+    - '       @CMDOP sentry follow $HardWorld.<playername>NPCFollowDist'
     - '     @ENDIF'
     - '     @IF s $HardWorld.<playername>CitizenSelectType = Dead'
     - '@PLAYER &8LOG $HardWorld.<var:$HardWorld.<playername>CitizenTeamID>ID'

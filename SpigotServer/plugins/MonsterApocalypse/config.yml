@@ -45,7 +45,7 @@ Enable Zombies attacking walls?: true
 Enable Zombie wall destruction sounds?: true
 Enable Zombie wall hit sounds?: false
 Enable PigZombies attacking walls?: true
-Drop the block item when a Zombie destroys it?: true
+Drop the block item when a Zombie destroys it?: false
 Enable worldguard 'enderman-grief' flag checks for all monster block operations?: false
 Enable monsters nerdpoling? (Building straight up): true
 Enable monsters airbridging? (Building across gaps): true
