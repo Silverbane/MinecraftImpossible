@@ -37,9 +37,9 @@ barrelProperties:
   #maximum gunpowder that can be loaded in the cannon
   maxLoadableGunpowder: 1
   #how much faster the loaded projectile will fired for each gunpowder loaded
-  multiplierVelocity: 0.5
+  multiplierVelocity: 1
   #the angle of which a fired projectile spreads when fired. Basically the lower this is, the more accurate the cannon is
-  spreadOfCannon: 4.0
+  spreadOfCannon: 3.0
 
 
 timings:
@@ -216,36 +216,36 @@ realisticBehaviour:
 permissions:
   #all the permissions required for a player to use certain parts of the cannon
   #more information can be found here: http://dev.bukkit.org/bukkit-plugins/cannons/pages/installation-and-configuration/cannons-2-0-and-up/permissions/
-  build: catapult.player.build
+  build: trebuchet.player.build
   #give the cannon a new name
-  rename: catapult.player.rename
+  rename: trebuchet.player.rename
   #permission for loading gunpowder and projectiles
-  load: catapult.player.load
+  load: trebuchet.player.load
   #permission for firing a cannon
-  fire: catapult.player.fire
+  fire: trebuchet.player.fire
   #permission for aiming with a cannon
-  adjust: catapult.player.adjust
+  adjust: trebuchet.player.adjust
   #permission to used the ramrod (stick) to clean and push the projectile
-  ramrod: catapult.player.ramrod
+  ramrod: trebuchet.player.ramrod
   #the cannon will follow the looking direction of the player if the aiming item is used (default: clock)
-  autoaim: catapult.player.autoaim
+  autoaim: trebuchet.player.autoaim
   #player can add himself as an observer of a cannon with the cmd: '/cannons observer'
-  observer: catapult.player.observer
+  observer: trebuchet.player.observer
   #not implemented yet
-  targetTracking: catapult.player.tracking
+  targetTracking: trebuchet.player.tracking
   #if a player has no permission for redstone, it is not possible to wire a cannon with redstone or uses torches.
   #firing a prewired cannon however is possible.
-  redstone: catapult.player.redstone
+  redstone: trebuchet.player.redstone
   #this player can use a thermometer to measure the temperature of a cannon (default item for thermometer is a gold nugget)
-  thermometer: catapult.player.thermometer
+  thermometer: trebuchet.player.thermometer
   #used to clean a cannon after firing and pushing a projectile into the barrel
-  ramrod: catapult.player.ramrod
+  ramrod: trebuchet.player.ramrod
   #cannon will autoreload if the player is sneaking and fires the cannon.
   #The ammunition comes from the chest next to the cannon
-  autoreload: catapult.player.autoreload
+  autoreload: trebuchet.player.autoreload
   #how much better the player can handle the cannon.
   #possible values are cannons.player.spreadmultiplier.1 - cannons.player.spreadmultiplier.10 for a multiplier of 0.1 - 1.0
-  spreadMultiplier: catapult.player.spreadmultiplier
+  spreadMultiplier: trebuchet.player.spreadmultiplier
 
 
 accessRestriction:
@@ -257,9 +257,10 @@ allowedProjectiles:
   #these are the list of projectiles a cannon can fire. The projectiles are taken from the config files in the projectiles folder.
   #they do not have to be named after an in-game item and can be named anything.
   #make sure the name matches the name of the config file of the projectile you want this cannon to be able to fire. the .yml part does not need to be included
-  - cobblestone
-  - stone
+  - cobblestone2
+  - stone2
   - enderpearl
+  - coal2
 
 
 sounds:
@@ -326,9 +327,9 @@ constructionBlocks:
   #the blocks which a player right clicks in order to fire a cannon
   rightClickTrigger: 
     #the block used in the cannons schematic which is used to fire the cannon when right clicked by a player. Default is torch
-    schematic: '50:5'
+    schematic: '69:-1'
     #the block used in game to fire the cannon when right clicked by a player. Default is torch
-    ingame: '50:5'
+    ingame: '69:-1'
   #list of blocks in the schematic that will be protected from explosions (e.g. buttons, because they break easily)
   protectedBlocks:
     - '50:5'

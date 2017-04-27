@@ -20,7 +20,7 @@ ammunition:
   #what item is used as gunpowder
   gunpowderType: '98:0'
   #does this cannon need gunpowder. If false you can directly load the projectile
-  needsGunpowder: true
+  needsGunpowder: false
   #gunpowder will be removed from inventories. If false you have to click the cannon until it is reloaded
   gunpowderConsumption: false
   #if false the cannons will not remove the projectile form the inventory but you still need a projectile
@@ -37,7 +37,7 @@ barrelProperties:
   #maximum gunpowder that can be loaded in the cannon
   maxLoadableGunpowder: 1
   #how much faster the loaded projectile will fired for each gunpowder loaded
-  multiplierVelocity: 0.5
+  multiplierVelocity: 0.65
   #the angle of which a fired projectile spreads when fired. Basically the lower this is, the more accurate the cannon is
   spreadOfCannon: 4.0
 
@@ -260,6 +260,7 @@ allowedProjectiles:
   - cobblestone
   - stone
   - enderpearl
+  - coal
 
 
 sounds:
@@ -326,9 +327,9 @@ constructionBlocks:
   #the blocks which a player right clicks in order to fire a cannon
   rightClickTrigger: 
     #the block used in the cannons schematic which is used to fire the cannon when right clicked by a player. Default is torch
-    schematic: '50:5'
+    schematic: '69:-1'
     #the block used in game to fire the cannon when right clicked by a player. Default is torch
-    ingame: '50:5'
+    ingame: '69:-1'
   #list of blocks in the schematic that will be protected from explosions (e.g. buttons, because they break easily)
   protectedBlocks:
     - '50:5'

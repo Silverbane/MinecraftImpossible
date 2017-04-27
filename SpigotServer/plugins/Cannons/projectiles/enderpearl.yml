@@ -22,7 +22,7 @@ cannonball:
   #set to true if you want to have a burning projectile
   isOnFire: false
   #the velocity of the projectile.
-  velocity: 6
+  velocity: 3
   #how many blocks the projectile will penetrate before it explodes. If it hits something impenetrable (e.g. obsidian) it will explode instantly.
   penetration: 0
   #whether the .projectile destroys blocks it penetrates. If false it will explode if it hits something impenetrable.
